@@ -1,0 +1,13 @@
+MicroReto 1 
+    PASO 4
+    Url:http://127.0.0.1:5500/index.html 
+    PASO 5
+    Error: ENOTDIR: not a directory, stat '/home/cohorte8/rueda-libre/index.html/promociones.html'
+    Significa que no se esta encontrado ese directorio en nuestra carpeta.
+    PASO 6 
+    HTML:Sera el que le da la estructura a la página mediante etiquetas como las imagenes
+    CSS: Dara los visuales en la página, como los colores.
+    Javascript: Controlara las acciones de la pagina para que sea funcional, como cuando un cliente quiera ver alguna bicicleta.
+
+MicroReto 2
+    
