@@ -8,6 +8,11 @@ MicroReto 1
     HTML:Sera el que le da la estructura a la página mediante etiquetas como las imagenes
     CSS: Dara los visuales en la página, como los colores.
     Javascript: Controlara las acciones de la pagina para que sea funcional, como cuando un cliente quiera ver alguna bicicleta.
+ RUTAS
+ /paginas/tarifas.html ruta de inicio a tarifas 
+ /paginas/reservas.html ruta de inicio a reservas
+ /paginas/reservas.html ruta de tarifas a reservas
+ ../paginas/tarifas.html ruta de reservas a tarifas
+ ../index.html ruta de reservas a inicio
 
-MicroReto 2
     
