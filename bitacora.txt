@@ -76,3 +76,7 @@ MicroReto 5
             footer 
             footer
         body
+MicroReto
+    Elegi el texto para las datos ya que es mas facil y accesible para el usuario 
+    Para la duracion y demas elegi las listas desplegables ya que facilita la experiencia del usuario.
+    

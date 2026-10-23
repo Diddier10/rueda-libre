@@ -14,6 +14,45 @@
             <li><a href="reservas.html">Reservas</a></li>
         </ul>
     </nav>
+    <main>
+        <section>
+            <h1>Reserva tu bicicleta</h1>
+            <form action="reservar" method="POST">
+                <fieldset>
+                    <legend>Tus datos</legend>
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" name="correo" required>
+                </fieldset>
+                <fieldset>  </fieldset>
+                    <legend>Tu alquiler</legend>
+                    <label for="bicicleta">Tipo de bicicleta:</label>
+                    <select id="bicicleta" name="bicicleta" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="urbana">Urbana</option>
+                        <option value="montaña">Montaña</option>
+                        <option value="electrica">Eléctrica</option>
+                    </select>
+                    <label for="fecha">Fecha de reserva:</label>
+                    <input type="date" id="fecha" name="fecha" required>
+                    <label for="hora">Hora de reserva:</label>
+                    <input type="time" id="hora" name="hora" required>
+                </fieldset>
+                <fieldset>
+                    <legend>Confirmacion</legend>
+                    <label for="duracion">Duración:</label>
+                    <select id="duracion" name="duracion" required>
+                        <option value="">Seleccione una opción</option>
+                        <option value="1hora">1 hora</option>
+                        <option value="medio-dia">Medio día (4 horas)</option>
+                        <option value="dia-completo">Día completo</option>
+                    </select>
+                </fieldset>
+                <button type="submit">Reservar</button>
+            </form>
+        </section>
+    </main>
     <section>
         <aside class="horario-atencion">
             <dl>
