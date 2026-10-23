@@ -15,4 +15,64 @@ MicroReto 1
  ../paginas/tarifas.html ruta de reservas a tarifas
  ../index.html ruta de reservas a inicio
 
-    
+MicroReto 5
+    Estructura del index
+        body
+            nav
+            nav
+            h1
+            header
+                nav
+                nav
+            header
+            section
+                h2
+            section
+            section
+                h2
+                h3
+            section
+            section
+                h2
+                ol
+                ol
+            section
+            section
+            section
+            footer
+            footer
+        body
+    Estructura de tarifas
+        body
+            nav
+                ul 
+                ul
+            nav
+            header
+                nav
+                nav
+            header
+            section
+                table
+                table
+            section
+            section
+                table
+                table
+            section
+            footer
+            footer
+        body
+    Estructura reservas
+        head
+        head
+        body 
+            nav
+                ul
+                ul
+            nav
+            dl 
+            dl 
+            footer 
+            footer
+        body
