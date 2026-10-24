@@ -16,37 +16,62 @@ body {
   padding: 0;
 }
 
-header, footer {
-  background-color: var(--azul-noche);
-  color: #FFFFFF;
-  padding: 1rem;
+#menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  padding: 0;
+  margin: 0;
 }
 
-header a, footer a {
+#menu a {
   color: #FFFFFF;
-}
-a {
-  color: var(--verde-ruta);
-}
-
-p.secundario, small {
-  color: var(--gris-asfalto);
-}
-
-button, .btn-primario {
-  background-color: var(--verde-ruta);
-  color: #FFFFFF;
-  border: none;
-  padding: 0.6rem 1.2rem;
+  text-decoration: none;
+  padding: 0.4rem 0.8rem;
   border-radius: 4px;
-  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.btn-secundario {
+#menu a:hover,
+#menu a:focus {
   background-color: var(--naranja-pedal);
   color: var(--azul-noche);
-  border: none;
-  padding: 0.6rem 1.2rem;
-  border-radius: 4px;
-  cursor: pointer;
+  outline: none;
+}
+
+#menu a.activo {
+  background-color: var(--verde-ruta);
+  color: #FFFFFF;
+  font-weight: bold;
+  border-bottom: 3px solid var(--naranja-pedal);
+}
+
+.btn-cta {
+  display: inline-block;
+  background-color: var(--verde-ruta);
+  color: #FFFFFF;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.btn-cta:hover {
+  background-color: var(--azul-noche);
+  color: #FFFFFF;
+}
+
+.btn-cta:focus {
+  outline: 3px solid var(--naranja-pedal);
+  outline-offset: 3px;
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: 3px solid var(--naranja-pedal);
+  outline-offset: 2px;
+  border-color: var(--verde-ruta);
 }

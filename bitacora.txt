@@ -116,3 +116,13 @@ Propiedad que SÍ se hereda: color
 Comprobación: El párrafo <p> hereda el color Azul Noche (#14213D) escrito en el body. En DevTools (pestaña Styles) aparece bajo la sección "Inherited from body".
 Propiedad que NO se hereda: margin
 Comprobación: El margin: 0 que le pusimos al body no pasa al párrafo. En DevTools (pestaña Computed) el <p> mantiene sus propios márgenes por defecto del navegador.
+
+MicroReto 10
+REGISTRO DE RESOLUCIÓN DE CONFLICTO DE ESPECIFICIDAD
+
+- Problema reportado: La clase .activo no aplicaba el color verde sobre el enlace de la página actual.
+- Causa: El selector de la regla base era `#menu a` que contiene 1 ID y 1 Etiqueta, con una especificidad de (1, 0, 1). La regla de la clase `.activo` solo poseía una especificidad de (0, 1, 0). Por reglas de cascada y especificidad en CSS, el selector con ID invalida las propiedades contradictorias de la clase.
+- Especificidades analizadas:
+  * `#menu a`: 1 ID, 0 Clases, 1 Elemento = (1, 0, 1) [Gana]
+  * `.activo`: 0 IDs, 1 Clase, 0 Elementos = (0, 1, 0) [Pierde]
+- Solución aplicada: Se reformuló el selector a `#menu a.activo` alcanzando una especificidad de (1, 1, 1) (1 ID, 1 Clase, 1 Elemento), superando al selector base sin recurrir a `!important` ni estilos en línea.
