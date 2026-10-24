@@ -76,7 +76,16 @@ MicroReto 5
             footer 
             footer
         body
-MicroReto
+MicroReto 6
     Elegi el texto para las datos ya que es mas facil y accesible para el usuario 
     Para la duracion y demas elegi las listas desplegables ya que facilita la experiencia del usuario.
-    
+
+MicroReto 7
+ Pruebas
+ Dato         Campo     Resultado esperado                 Resultado Obtenido
+ Correo       email          validacion                       validacion
+ telefono     telefono  validacion que empieze por 3      validacion que empieze por 3             
+ documento     texto       entre 6 a 10 numeros              entre 6 a 10 numeros 
+ plan          opcion              requerido                   requerido
+ fecha          data      fecha entre minimo y maximo      fecha entre minimo y maximo 
+ 
