@@ -1,10 +1,23 @@
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box; 
+}
 :root {
+
   --verde-ruta: #1E7A4F;
   --naranja-pedal: #F39A2B;
   --azul-noche: #14213D;
   --crema: #FAF6EF;
   --gris-asfalto: #5B6470;
+  --blanco: #FFFFFF;
+
+  --espacio-xs: 0.5rem;   
+  --espacio-s: 1rem;      
+  --espacio-m: 1.5rem;    
+  --espacio-l: 2rem;      
+  --espacio-xl: 3rem;     
 }
 
 body {
@@ -16,18 +29,46 @@ body {
   padding: 0;
 }
 
+
+main {
+  max-width: 68rem; 
+  margin: 0 auto;
+  padding: var(--espacio-m);
+}
+
+.portada-inicio {
+  width: 100%;
+  min-height: 45vh; 
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: var(--espacio-m);
+}
+
+header, footer {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+  padding: var(--espacio-m);
+}
+
+header a, footer a {
+  color: var(--blanco);
+}
+
+
 #menu {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
   padding: 0;
-  margin: 0;
+  margin: var(--espacio-s) 0 0 0;
 }
 
 #menu a {
-  color: #FFFFFF;
+  display: inline-block;
+  color: var(--blanco);
   text-decoration: none;
-  padding: 0.4rem 0.8rem;
+  padding: var(--espacio-xs) var(--espacio-s);
   border-radius: 4px;
   transition: background-color 0.2s ease, color 0.2s ease;
 }
@@ -41,37 +82,127 @@ body {
 
 #menu a.activo {
   background-color: var(--verde-ruta);
-  color: #FFFFFF;
+  color: var(--blanco);
   font-weight: bold;
   border-bottom: 3px solid var(--naranja-pedal);
 }
 
+.tarjeta-servicio {
+  background-color: var(--blanco);
+  border: 1px solid var(--gris-asfalto); 
+  border-radius: 8px;
+  padding: var(--espacio-m);
+  margin-bottom: var(--espacio-m);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tarjeta-servicio img {
+  width: 100%; 
+  height:auto;
+  max-height: 18rem;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: var(--espacio-s);
+}
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: var(--espacio-l);
+  background-color: var(--blanco);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+th, td {
+  padding: var(--espacio-s) var(--espacio-m);
+  border: 1px solid var(--gris-asfalto);
+  text-align: left;
+}
+
+th {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #F4F0E8;
+}
+
+fieldset {
+  border: 1px solid var(--gris-asfalto);
+  border-radius: 6px;
+  padding: var(--espacio-m);
+  margin-bottom: var(--espacio-l);
+  background-color: var(--blanco);
+}
+
+legend {
+  font-weight: bold;
+  padding: 0 var(--espacio-xs);
+  color: var(--verde-ruta);
+}
+
+form p {
+  margin-bottom: var(--espacio-s);
+}
+
+label {
+  display: block;
+  margin-bottom: var(--espacio-xs);
+  font-weight: 600;
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  display: block;
+  width: 100%;
+  padding: var(--espacio-s);
+  border: 1px solid var(--gris-asfalto);
+  border-radius: 4px;
+  background-color: var(--crema);
+  font-size: 1rem;
+}
+
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: var(--espacio-xs);
+}
+
+button[type="submit"],
 .btn-cta {
   display: inline-block;
   background-color: var(--verde-ruta);
-  color: #FFFFFF;
-  text-decoration: none;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  color: var(--blanco);
+  border: none;
+  padding: var(--espacio-s) var(--espacio-l);
+  border-radius: 4px;
+  font-size: 1rem;
   font-weight: bold;
-  transition: background-color 0.2s ease, transform 0.1s ease;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
 }
 
+button[type="submit"]:hover,
 .btn-cta:hover {
   background-color: var(--azul-noche);
-  color: #FFFFFF;
 }
-
-.btn-cta:focus {
-  outline: 3px solid var(--naranja-pedal);
-  outline-offset: 3px;
-}
-
 input:focus,
 select:focus,
 textarea:focus,
-button:focus {
+button:focus,
+.btn-cta:focus {
   outline: 3px solid var(--naranja-pedal);
   outline-offset: 2px;
-  border-color: var(--verde-ruta);
 }

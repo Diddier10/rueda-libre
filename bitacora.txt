@@ -126,3 +126,23 @@ REGISTRO DE RESOLUCIÓN DE CONFLICTO DE ESPECIFICIDAD
   * `#menu a`: 1 ID, 0 Clases, 1 Elemento = (1, 0, 1) [Gana]
   * `.activo`: 0 IDs, 1 Clase, 0 Elementos = (0, 1, 0) [Pierde]
 - Solución aplicada: Se reformuló el selector a `#menu a.activo` alcanzando una especificidad de (1, 1, 1) (1 ID, 1 Clase, 1 Elemento), superando al selector base sin recurrir a `!important` ni estilos en línea.
+
+MicroReto 12
+MEDICIÓN DEL MODELO DE CAJA EN DEVTOOLS (COMPUTED)
+
+Elemento evaluado: .tarjeta-servicio
+
+1. Con box-sizing: content-box (por defecto)
+- Ancho asignado (width): 300px
+- Relleno (padding horizontal): 24px + 24px = 48px
+- Borde (border horizontal): 1px + 1px = 2px
+- Ancho total ocupado en pantalla: 350px (300 + 48 + 2)
+- Resultado: El elemento se expande más allá de la medida asignada, generando desbordamientos.
+
+2. Con box-sizing: border-box (aplicado en el proyecto)
+- Ancho asignado (width): 300px
+- Relleno (padding horizontal): 24px + 24px = 48px
+- Borde (border horizontal): 1px + 1px = 2px
+- Ancho del contenido interno ajustado: 250px (300 - 48 - 2)
+- Ancho total ocupado en pantalla: 300px
+- Resultado: El ancho total incluye el relleno y el borde dentro de la medida definida, manteniendo la maquetación exacta.
