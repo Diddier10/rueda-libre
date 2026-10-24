@@ -88,4 +88,25 @@ MicroReto 7
  documento     texto       entre 6 a 10 numeros              entre 6 a 10 numeros 
  plan          opcion              requerido                   requerido
  fecha          data      fecha entre minimo y maximo      fecha entre minimo y maximo 
- 
+MicroReto 8
+
+Idioma: Se agregó lang="es" en la etiqueta html de las tres páginas para que los lectores de pantalla lean correctamente en español.
+Textos alternativos: Se cambiaron los atributos alt vacíos por descripciones claras en todas las imágenes.
+Jerarquía de títulos: Se organizó el orden de h1, h2 y h3 para no saltar niveles de encabezados en el contenido.
+Textos de enlaces: Se reemplazaron frases genéricas como "haz clic aquí" por textos descriptivos como "Ver tabla de tarifas".
+Navegación por teclado: Se ordenó la estructura del formulario para que la tecla Tab recorra los campos en un orden lógico.
+EVALUACIÓN DE CONTRASTE DE COLOR (WCAG)
+Blanco sobre Verde Ruta (#1E7A4F): Apto (5.31:1)
+Blanco sobre Naranja Pedal (#F39A2B): No apto (2.22:1)
+Azul Noche sobre Naranja Pedal (#F39A2B): Apto (7.20:1)
+Azul Noche sobre Crema (#FAF6EF): Apto (14.83:1)
+Gris Asfalto sobre Crema (#FAF6EF): Apto (5.57:1)
+Verde Ruta sobre Crema (#FAF6EF): Apto (4.93:1)
+Naranja Pedal sobre Crema (#FAF6EF): No apto (2.06:1)
+Blanco sobre Azul Noche (#14213D): Apto (15.97:1)
+MAPA DE USO DE COLOR EN CSS
+Fondo general: Crema (#FAF6EF).
+Texto principal y títulos: Azul Noche (#14213D) sobre fondo Crema.
+Texto secundario: Gris Asfalto (#5B6470) sobre fondo Crema.
+Botones primarios y enlaces: Verde Ruta (#1E7A4F) con texto Blanco (#FFFFFF).
+Botones secundarios: Naranja Pedal (#F39A2B) con texto Azul Noche (#14213D).
