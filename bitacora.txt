@@ -110,3 +110,9 @@ Texto principal y títulos: Azul Noche (#14213D) sobre fondo Crema.
 Texto secundario: Gris Asfalto (#5B6470) sobre fondo Crema.
 Botones primarios y enlaces: Verde Ruta (#1E7A4F) con texto Blanco (#FFFFFF).
 Botones secundarios: Naranja Pedal (#F39A2B) con texto Azul Noche (#14213D).
+ 
+MicroReto 9
+Propiedad que SÍ se hereda: color
+Comprobación: El párrafo <p> hereda el color Azul Noche (#14213D) escrito en el body. En DevTools (pestaña Styles) aparece bajo la sección "Inherited from body".
+Propiedad que NO se hereda: margin
+Comprobación: El margin: 0 que le pusimos al body no pasa al párrafo. En DevTools (pestaña Computed) el <p> mantiene sus propios márgenes por defecto del navegador.

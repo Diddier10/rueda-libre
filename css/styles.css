@@ -1,0 +1,52 @@
+
+:root {
+  --verde-ruta: #1E7A4F;
+  --naranja-pedal: #F39A2B;
+  --azul-noche: #14213D;
+  --crema: #FAF6EF;
+  --gris-asfalto: #5B6470;
+}
+
+body {
+  background-color: var(--crema);
+  color: var(--azul-noche);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+header, footer {
+  background-color: var(--azul-noche);
+  color: #FFFFFF;
+  padding: 1rem;
+}
+
+header a, footer a {
+  color: #FFFFFF;
+}
+a {
+  color: var(--verde-ruta);
+}
+
+p.secundario, small {
+  color: var(--gris-asfalto);
+}
+
+button, .btn-primario {
+  background-color: var(--verde-ruta);
+  color: #FFFFFF;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-secundario {
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
