@@ -37,10 +37,11 @@ main {
 }
 
 .portada-inicio {
-  width: 100%;
+  width: 70%;
+  height: 100px;
   min-height: 45vh;
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: 4px;
   margin-bottom: var(--espacio-m);
 }
 
@@ -111,7 +112,7 @@ header a, footer a {
 }
 
 .tarjeta-servicio img {
-  width: 100%;
+  width: 50%;
   height: auto;
   max-height: 18rem;
   object-fit: cover;
