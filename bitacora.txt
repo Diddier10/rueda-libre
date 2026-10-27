@@ -146,3 +146,8 @@ Elemento evaluado: .tarjeta-servicio
 - Ancho del contenido interno ajustado: 250px (300 - 48 - 2)
 - Ancho total ocupado en pantalla: 300px
 - Resultado: El ancho total incluye el relleno y el borde dentro de la medida definida, manteniendo la maquetación exacta.
+
+SEMANA 2 
+Dia 1 
+    MicroReto 1
+    Al encoger la pagina el encabezado y el pie de pagina se va acumulando hasta que se organiza uno debajo de otro si es muy pequeña la margen

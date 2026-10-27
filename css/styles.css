@@ -37,8 +37,8 @@ main {
 }
 
 .portada-inicio {
-  width: 70%;
-  height: 100px;
+  width: 30%;
+  height: auto;
   min-height: 45vh;
   object-fit: cover;
   border-radius: 4px;
@@ -49,6 +49,22 @@ header, footer {
   background-color: var(--azul-noche);
   color: var(--blanco);
   padding: var(--espacio-m);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;     
+  gap: var(--espacio-grande);
+  padding: var(--espacio-medium);   
+}
+footer section {
+  flex: 1;
 }
 
 header a, footer a {
@@ -61,11 +77,11 @@ header a, footer a {
   flex-wrap: wrap;
   gap: var(--espacio-s);
   padding: 0;
-  margin: var(--espacio-s) 0 0 0;
+  margin:0;
 }
 
 #menu a {
-  display: inline-block;
+  display:block;
   color: var(--blanco);
   text-decoration: none;
   padding: var(--espacio-xs) var(--espacio-s);
