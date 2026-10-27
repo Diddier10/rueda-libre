@@ -256,3 +256,62 @@ button:focus,
   outline: 3px solid var(--naranja-pedal);
   outline-offset: 3px;
 }
+#flota {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Sin media queries */
+  gap: 2rem;                                                   /* Separa filas y columnas por igual */
+  padding: 3rem 1.5rem;
+}
+
+#flota h2 {
+  grid-column: 1 / -1; 
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.tarjeta-bici {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 1.5rem;                 
+  background-color: var(--blanco);
+  border-radius: 8px;              
+  border: 1px solid #e0e0e0;       
+}
+
+.tarjeta-bici img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.precio {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--azul-noche);
+  margin: 0.5rem 0 1rem 0;
+}
+
+boton-reserva {
+  display: block;                
+  text-align:center;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75rem 1.25rem;         
+  background-color: var(--naranja);
+  color: var(--blanco);
+  border-radius: 4px;              
+  margin-top: auto;                
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.boton-reserva:hover {
+  background-color: #d96b00;       
+  transform: translateY(-2px);    
+}
+
+.boton-reserva:active {
+  transform: translateY(0);       
+}

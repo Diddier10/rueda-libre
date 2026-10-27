@@ -150,4 +150,8 @@ Elemento evaluado: .tarjeta-servicio
 SEMANA 2 
 Dia 1 
     MicroReto 1
-    Al encoger la pagina el encabezado y el pie de pagina se va acumulando hasta que se organiza uno debajo de otro si es muy pequeña la margen
+    Al encoger la pagina el encabezado y el pie de pagina se va acumulando hasta que se organiza uno debajo de otro si es muy pequeña la margen.
+    MicroReto 2
+    1280 px 3 columnas
+    900 px 2 columnas 
+    500 px 1 columna
