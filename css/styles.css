@@ -8,9 +8,11 @@
 :root {
   --verde-ruta: #1E7A4F;
   --naranja-pedal: #F39A2B;
+  --naranja: var(--naranja-pedal); 
   --azul-noche: #14213D;
   --crema: #FAF6EF;
   --gris-asfalto: #5B6470;
+  --gris-claro: #F4F4F4;
   --blanco: #FFFFFF;
 
   --espacio-xs: 0.5rem;
@@ -36,108 +38,20 @@ main {
   padding: var(--espacio-m);
 }
 
-.portada-inicio {
-  width: 30%;
-  height: auto;
-  min-height: 45vh;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: var(--espacio-m);
-}
-
-header, footer {
-  background-color: var(--azul-noche);
-  color: var(--blanco);
-  padding: var(--espacio-m);
-}
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.footer {
-  display: flex;
-  justify-content: space-between; 
-  align-items: flex-start;     
-  gap: var(--espacio-grande);
-  padding: var(--espacio-medium);   
-}
-footer section {
-  flex: 1;
-}
-
-header a, footer a {
-  color: var(--blanco);
-}
-
-#menu {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  gap: var(--espacio-s);
-  padding: 0;
-  margin:0;
-}
-
-#menu a {
-  display:block;
-  color: var(--blanco);
-  text-decoration: none;
-  padding: var(--espacio-xs) var(--espacio-s);
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#menu a:hover,
-#menu a:focus {
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-  outline: none;
-}
-
-#menu a.activo {
-  background-color: var(--verde-ruta);
-  color: var(--blanco);
-  font-weight: bold;
-  border-bottom: 3px solid var(--naranja-pedal);
-}
-
-.tarjeta-servicio {
-  position: relative;
-  background-color: var(--blanco);
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 8px;
-  padding: var(--espacio-m);
-  margin-bottom: var(--espacio-m);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.badge-nuevo {
+.sr-only {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-  font-weight: bold;
-  font-size: 0.85rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.tarjeta-servicio img {
-  width: 50%;
-  height: auto;
-  max-height: 18rem;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-top: var(--espacio-s);
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 button[type="submit"],
-.btn-cta {
+.btn-cta,
+.boton-reserva {
   display: inline-block;
   background-color: var(--verde-ruta);
   color: var(--blanco);
@@ -148,12 +62,29 @@ button[type="submit"],
   font-weight: bold;
   cursor: pointer;
   text-decoration: none;
-  transition: background-color 0.2s ease;
+  text-align: center;
+  transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 button[type="submit"]:hover,
 .btn-cta:hover {
   background-color: var(--azul-noche);
+}
+
+.boton-reserva {
+  display: block;
+  background-color: var(--naranja-pedal);
+  padding: 0.75rem 1.25rem;
+  margin-top: auto;
+}
+
+.boton-reserva:hover {
+  background-color: #d96b00;
+  transform: translateY(-2px);
+}
+
+.boton-reserva:active {
+  transform: translateY(0);
 }
 
 .btn-whatsapp {
@@ -183,12 +114,14 @@ table {
   background-color: var(--blanco);
   border-radius: 6px;
   overflow: hidden;
+  font-size: 0.875rem; 
 }
 
 th, td {
-  padding: var(--espacio-s) var(--espacio-m);
+  padding: 0.5rem 0.4rem; 
   border: 1px solid var(--gris-asfalto);
   text-align: left;
+  word-break: break-word; 
 }
 
 th {
@@ -201,12 +134,216 @@ tr:nth-child(even) {
   background-color: #F4F0E8;
 }
 
+input:focus,
+select:focus,
+textarea:focus,
+button:focus,
+.btn-cta:focus,
+.btn-whatsapp:focus,
+.boton-reserva:focus {
+  outline: 3px solid var(--naranja-pedal);
+  outline-offset: 3px;
+}
+
+header, footer, .footer {
+  background-color: var(--azul-noche);
+  color: var(--blanco);
+  padding: var(--espacio-m);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer, footer {
+  display: flex;
+  justify-content: space-between; 
+  align-items: flex-start;     
+  gap: var(--espacio-l);
+}
+
+footer section {
+  flex: 1;
+}
+
+header a, footer a {
+  color: var(--blanco);
+}
+
+#menu {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espacio-s);
+  padding: 0;
+  margin: 0;
+}
+
+#menu a {
+  display: block;
+  color: var(--blanco);
+  text-decoration: none;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+#menu a:hover,
+#menu a:focus {
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+  outline: none;
+}
+
+#menu a.activo {
+  background-color: var(--verde-ruta);
+  color: var(--blanco);
+  font-weight: bold;
+  border-bottom: 3px solid var(--naranja-pedal);
+}
+
+#portada {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: var(--espacio-l);
+  padding: var(--espacio-xl) var(--espacio-m);
+}
+
+.contenido-portada h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--azul-noche);
+  margin-bottom: var(--espacio-s);
+}
+
+.contenido-portada p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: var(--espacio-m);
+}
+
+.imagen-portada {
+  margin: 0;
+}
+
+.imagen-portada img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.portada-inicio {
+  width: 30%;
+  height: auto;
+  min-height: 45vh;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: var(--espacio-m);
+}
+#flota, #rutas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
+  gap: var(--espacio-l);                                                  
+  padding: var(--espacio-xl) var(--espacio-m);
+}
+
+#flota h2, #rutas h2 {
+  grid-column: 1 / -1; 
+  text-align: center;
+  margin-bottom: var(--espacio-s);
+  color: var(--azul-noche);
+}
+
+.tarjeta-bici, .tarjeta-ruta, .tarjeta-servicio {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: var(--espacio-m);                 
+  background-color: var(--blanco);
+  border-radius: 8px;              
+  border: 1px solid #e0e0e0;       
+}
+
+.tarjeta-servicio {
+  position: relative;
+  border-color: var(--gris-asfalto);
+  margin-bottom: var(--espacio-m);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.badge-nuevo {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.tarjeta-bici img, .imagen-ruta img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: var(--espacio-s);
+}
+
+.tarjeta-servicio img {
+  width: 50%;
+  height: auto;
+  max-height: 18rem;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: var(--espacio-s);
+}
+
+.imagen-ruta {
+  margin: 0 0 var(--espacio-s) 0;
+}
+
+.precio, .detalles-ruta {
+  font-weight: bold;
+  font-size: 1.25rem;
+  color: var(--azul-noche);
+  margin: 0.5rem 0 1rem 0;
+}
+
+#reservas {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--espacio-l);
+  padding: 2.5rem var(--espacio-m);
+  align-items: start;
+}
+
+#reservas section {
+  background-color: var(--blanco);
+  padding: var(--espacio-m);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
 fieldset {
   border: 1px solid var(--gris-asfalto);
   border-radius: 6px;
   padding: var(--espacio-m);
   margin-bottom: var(--espacio-l);
   background-color: var(--blanco);
+}
+
+#reservas form fieldset {
+  border: 1px solid #cccccc;
+  padding: var(--espacio-s);
+  margin-bottom: 1.25rem;
 }
 
 legend {
@@ -219,10 +356,15 @@ form p {
   margin-bottom: var(--espacio-s);
 }
 
-label {
+label,
+#reservas form label {
   display: block;
   margin-bottom: var(--espacio-xs);
   font-weight: 600;
+}
+
+#reservas form label {
+  margin-top: 0.75rem;
 }
 
 input[type="text"],
@@ -241,180 +383,6 @@ textarea {
   font-size: 1rem;
 }
 
-input[type="checkbox"] {
-  display: inline-block;
-  width: auto;
-  margin-right: var(--espacio-xs);
-}
-
-input:focus,
-select:focus,
-textarea:focus,
-button:focus,
-.btn-cta:focus,
-.btn-whatsapp:focus {
-  outline: 3px solid var(--naranja-pedal);
-  outline-offset: 3px;
-}
-#flota {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
-  gap: 2rem;                                                  
-  padding: 3rem 1.5rem;
-}
-
-#flota h2 {
-  grid-column: 1 / -1; 
-  text-align: center;
-  margin-bottom: 1rem;
-}
-
-.tarjeta-bici {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  padding: 1.5rem;                 
-  background-color: var(--blanco);
-  border-radius: 8px;              
-  border: 1px solid #e0e0e0;       
-}
-
-.tarjeta-bici img {
-  width: 100%;
-  height: 12rem;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 1rem;
-}
-
-.precio {
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--azul-noche);
-  margin: 0.5rem 0 1rem 0;
-}
-
-boton-reserva {
-  display: block;                
-  text-align:center;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 0.75rem 1.25rem;         
-  background-color: var(--naranja);
-  color: var(--blanco);
-  border-radius: 4px;              
-  margin-top: auto;                
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-.boton-reserva:hover {
-  background-color: #d96b00;       
-  transform: translateY(-2px);    
-}
-
-.boton-reserva:active {
-  transform: translateY(0);       
-}
-#portada {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 2rem;
-  padding: 3rem 1.5rem;
-}
-
-.contenido-portada h1 {
-  font-size: 2.25rem;
-  line-height: 1.2;
-  color: var(--azul-noche);
-  margin-bottom: 1rem;
-}
-
-.contenido-portada p {
-  font-size: 1.125rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.imagen-portada {
-  margin: 0;
-}
-
-.imagen-portada img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  object-fit: cover;
-}
-#rutas {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 2rem;
-  padding: 3rem 1.5rem;
-}
-
-#rutas h2 {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-bottom: 1rem;
-  color: var(--azul-noche);
-}
-
-.tarjeta-ruta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 1.5rem;
-  background-color: var(--blanco);
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
-.imagen-ruta {
-  margin: 0 0 1rem 0;
-}
-
-.imagen-ruta img {
-  width: 100%;
-  height: 12rem;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.detalles-ruta {
-  font-weight: bold;
-  color: var(--azul-noche);
-  margin: 0.5rem 0 1rem 0;
-}
-#reservas {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  padding: 2.5rem 1.5rem;
-  align-items: start;
-}
-
-#reservas section {
-  background-color: var(--blanco, #ffffff);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
-#reservas form fieldset {
-  border: 1px solid #cccccc;
-  border-radius: 6px;
-  padding: 1rem;
-  margin-bottom: 1.25rem;
-}
-
-#reservas form label {
-  display: block;
-  margin-top: 0.75rem;
-  margin-bottom: 0.25rem;
-  font-weight: bold;
-}
-
 #reservas form input[type="text"],
 #reservas form input[type="email"],
 #reservas form input[type="tel"],
@@ -422,38 +390,20 @@ boton-reserva {
 #reservas form input[type="number"],
 #reservas form select,
 #reservas form textarea {
-  width: 100%;
+  border-color: #cccccc;
   padding: 0.6rem;
-  border: 1px solid #cccccc;
-  border-radius: 4px;
-  font-size: 1rem;
 }
 
-.horario-atencion {
-  background-color: var(--gris-claro, #f4f4f4);
-  padding: 1.5rem;
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-right: var(--espacio-xs);
 }
 
-.horario-atencion dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.5rem 1rem;
-  margin: 0;
-}
-
-.horario-atencion dt {
-  font-weight: bold;
-}
-
-.horario-atencion dd {
-  margin: 0;
-}
 #reservas form fieldset.fila-campos {
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  gap: var(--espacio-s);
   border: none;
   padding: 0;
   margin-top: 0.75rem;
@@ -469,13 +419,128 @@ boton-reserva {
   margin-top: 0;
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
+.horario-atencion {
+  background-color: var(--gris-claro);
+  padding: var(--espacio-m);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.horario-atencion dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--espacio-xs) var(--espacio-s);
+  margin: 0;
+}
+
+.horario-atencion dt {
+  font-weight: bold;
+}
+
+.horario-atencion dd {
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  table {
+    font-size: 1rem;
+  }
+
+  th, td {
+    padding: var(--espacio-s) var(--espacio-m);
+  }
+
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  #portada {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--espacio-l);
+  }
+
+  #flota, #rutas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #reservas {
+    grid-template-columns: 2fr 1fr;
+  }
+
+  footer, .footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  #portada {
+    gap: var(--espacio-xl);
+    padding: var(--espacio-xl) 0;
+  }
+
+  #flota, #rutas {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--espacio-l);
+  }
+  #reservas {
+    gap: var(--espacio-xl);
+  }
+}
+
+header.encabezado {
+  display: flex;
+  flex-direction: column;     
+  align-items: center;        
+  gap: var(--espacio-s);
+  padding: var(--espacio-m);
+  background-color: var(--azul-noche);
+  text-align: center;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--blanco);
+  margin: 0;
+}
+
+header nav ul#menu {
+  display: flex;
+  flex-wrap: wrap;            
+  justify-content: center;    
+  gap: var(--espacio-xs);
+  list-style: none;
   padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  border: 0;
+  margin: 0;
+}
+
+header nav ul#menu a {
+  display: block;
+  color: var(--blanco);
+  text-decoration: none;
+  padding: var(--espacio-xs) var(--espacio-s);
+  border-radius: 4px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+header nav ul#menu a:hover,
+header nav ul#menu a:focus {
+  background-color: var(--naranja-pedal);
+  color: var(--azul-noche);
+}
+
+@media (min-width: 768px) {
+  header.encabezado {
+    flex-direction: row;            
+    justify-content: space-between; 
+    text-align: left;
+  }
+
+  header nav ul#menu {
+    justify-content: flex-end;     
+    gap: var(--espacio-s);
+  }
 }

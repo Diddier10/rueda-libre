@@ -161,3 +161,8 @@ Dia 1
         Galería: Híbrido. Grid para la cuadrícula responsiva (repeat(auto-fit, minmax(18rem, 1fr))) y Flexbox interno para fijar el botón al fondo (margin-top: auto).
         Reservas: CSS Grid (display: grid). Aplica la proporción 2fr 1fr entre el formulario (66%) y el lateral (33%).
     |   Fila del Formulario: Flexbox (display: flex). Ordena Documento y Teléfono en una fila 1D, repartiendo el espacio al 50% con flex: 1.
+    MicroReto 4
+     Registro de Pruebas Responsivas (DevTools)
+        360 px (Móvil): La tabla de tarifas generaba scroll horizontal. Solución: Se redujo el `padding` de las celdas a `0.5rem 0.4rem` y la letra a `0.875rem`.
+        68 px (Tablet): Las tarjetas de flota/rutas se veían muy estiradas en 1 columna. Solución:Se cambió la cuadrícula a 2 columnas con `grid-template-columns: repeat(2, 1fr)`.
+        1280 px (Escritorio): Las imágenes se desbordaban y el contenido se dispersaba. Solución:Se limitó el ancho con `max-width: 68rem` en `<main>` e `img { max-width: 100%; }`.
