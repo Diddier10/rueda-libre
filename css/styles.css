@@ -258,8 +258,8 @@ button:focus,
 }
 #flota {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); /* Sin media queries */
-  gap: 2rem;                                                   /* Separa filas y columnas por igual */
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr)); 
+  gap: 2rem;                                                  
   padding: 3rem 1.5rem;
 }
 
@@ -314,4 +314,168 @@ boton-reserva {
 
 .boton-reserva:active {
   transform: translateY(0);       
+}
+#portada {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+}
+
+.contenido-portada h1 {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  color: var(--azul-noche);
+  margin-bottom: 1rem;
+}
+
+.contenido-portada p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.imagen-portada {
+  margin: 0;
+}
+
+.imagen-portada img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+#rutas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+  gap: 2rem;
+  padding: 3rem 1.5rem;
+}
+
+#rutas h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--azul-noche);
+}
+
+.tarjeta-ruta {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--blanco);
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.imagen-ruta {
+  margin: 0 0 1rem 0;
+}
+
+.imagen-ruta img {
+  width: 100%;
+  height: 12rem;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.detalles-ruta {
+  font-weight: bold;
+  color: var(--azul-noche);
+  margin: 0.5rem 0 1rem 0;
+}
+#reservas {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  padding: 2.5rem 1.5rem;
+  align-items: start;
+}
+
+#reservas section {
+  background-color: var(--blanco, #ffffff);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+#reservas form fieldset {
+  border: 1px solid #cccccc;
+  border-radius: 6px;
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+#reservas form label {
+  display: block;
+  margin-top: 0.75rem;
+  margin-bottom: 0.25rem;
+  font-weight: bold;
+}
+
+#reservas form input[type="text"],
+#reservas form input[type="email"],
+#reservas form input[type="tel"],
+#reservas form input[type="date"],
+#reservas form input[type="number"],
+#reservas form select,
+#reservas form textarea {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.horario-atencion {
+  background-color: var(--gris-claro, #f4f4f4);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+}
+
+.horario-atencion dl {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem 1rem;
+  margin: 0;
+}
+
+.horario-atencion dt {
+  font-weight: bold;
+}
+
+.horario-atencion dd {
+  margin: 0;
+}
+#reservas form fieldset.fila-campos {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  border: none;
+  padding: 0;
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
+
+#reservas form fieldset.fila-campos .campo {
+  flex: 1;
+  margin: 0;
+}
+
+#reservas form fieldset.fila-campos .campo label {
+  margin-top: 0;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }

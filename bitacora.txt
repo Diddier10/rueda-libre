@@ -155,3 +155,9 @@ Dia 1
     1280 px 3 columnas
     900 px 2 columnas 
     500 px 1 columna
+    MicroReto 3 
+        Encabezado: Flexbox (display: flex). Alinea en 1D horizontal el logo a la izquierda y el menú a la derecha (justify-content: space-between).
+        Portada: CSS Grid (display: grid). Divide en 2D con grid-template-columns: 1fr 1fr y centra el texto verticalmente (align-items: center).
+        Galería: Híbrido. Grid para la cuadrícula responsiva (repeat(auto-fit, minmax(18rem, 1fr))) y Flexbox interno para fijar el botón al fondo (margin-top: auto).
+        Reservas: CSS Grid (display: grid). Aplica la proporción 2fr 1fr entre el formulario (66%) y el lateral (33%).
+    |   Fila del Formulario: Flexbox (display: flex). Ordena Documento y Teléfono en una fila 1D, repartiendo el espacio al 50% con flex: 1.

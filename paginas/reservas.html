@@ -7,15 +7,17 @@
     <title>Reserva tu bicicleta</title>
 </head>
 <body>
-    <a href="mailto:hola@ruedalibre.example">Enviar correo</a>
-    <nav>
-        <ul id="menu">
-            <li><a href="../index.html">Inicio</a></li>
-            <li><a href="../paginas/tarifas.html">Tarifas y rutas</a></li>
-            <li><a href="reservas.html">Reservas</a></li>
-        </ul>
-    </nav>
-    <main>
+    <header class="encabezado">
+        <a href="mailto:hola@ruedalibre.example">Enviar correo</a>
+        <nav>
+            <ul id="menu">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="../paginas/tarifas.html">Tarifas y rutas</a></li>
+                <li><a href="reservas.html">Reservas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="reservas">
         <section>
             <h1>Reserva tu bicicleta</h1>
             <form action=""https://httpbin.org/post"" method="POST">
@@ -23,12 +25,19 @@
                     <legend>Tus datos</legend>
                     <label for="nombre">Nombre:</label>
                     <input type="text" id="nombre" name="nombre" required minlength="3" maxlength="30">
-                    <label for="documento">Número de documento:</label>
-                    <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Ingrese un número de documento válido (6 a 10 dígitos)">
                     <label for="correo">Correo electrónico:</label>
                     <input type="email" id="correo" name="correo" required>
-                    <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{6,9}" title="Ingrese un número de teléfono válido (7 a 10 dígitos)">
+                    <fieldset>
+                        <legend class="sr-only">Documento y Celular</legend>
+                            <p class="campo">
+                                <label for="documento">Número de documento:</label>
+                                <input type="text" id="documento" name="documento" required pattern="[0-9]{6,10}" title="Ingrese un número de documento válido (6 a 10 dígitos)">
+                            </p>
+                            <p class="campo">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" required pattern="3[0-9]{6,9}" title="Ingrese un número de teléfono válido (7 a 10 dígitos)">
+                            </p>
+                    </fieldset>
                 </fieldset>
                 <fieldset>  
                     <legend>Tu alquiler</legend>
@@ -61,33 +70,34 @@
                 <button type="submit"> Confirmar Reserva</button>
             </form>
         </section>
+        <section>
+            <aside class="horario-atencion">
+                <dl>
+                    <dt>Lunes</dt>
+                    <dd>09:00  18:00</dd>
+
+                    <dt>Martes</dt>
+                    <dd>09:00  18:00</dd>
+
+                    <dt>Miércoles</dt>
+                    <dd>09:00  18:00</dd>
+
+                    <dt>Jueves</dt>
+                    <dd>09:00 18:00</dd>
+
+                    <dt>Viernes</dt>
+                    <dd>09:00  17:00</dd>
+
+                    <dt>Sábado</dt>
+                    <dd>10:00  14:00</dd>
+
+                    <dt>Domingo</dt>
+                    <dd>Cerrado</dd>
+                </dl>
+            </aside>
+        </section>
     </main>
     <section>
-        <aside class="horario-atencion">
-            <dl>
-                <dt>Lunes</dt>
-                <dd>09:00  18:00</dd>
-
-                <dt>Martes</dt>
-                <dd>09:00  18:00</dd>
-
-                <dt>Miércoles</dt>
-                <dd>09:00  18:00</dd>
-
-                <dt>Jueves</dt>
-                <dd>09:00 18:00</dd>
-
-                <dt>Viernes</dt>
-                <dd>09:00  17:00</dd>
-
-                <dt>Sábado</dt>
-                <dd>10:00  14:00</dd>
-
-                <dt>Domingo</dt>
-                <dd>Cerrado</dd>
-            </dl>
-        </aside>
-    </section>
     <footer class="pie-pagina">
        <p class="negocio">Rueda Libre</p>
         <address class="correo">
