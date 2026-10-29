@@ -166,3 +166,28 @@ Dia 1
         360 px (Móvil): La tabla de tarifas generaba scroll horizontal. Solución: Se redujo el `padding` de las celdas a `0.5rem 0.4rem` y la letra a `0.875rem`.
         68 px (Tablet): Las tarjetas de flota/rutas se veían muy estiradas en 1 columna. Solución:Se cambió la cuadrícula a 2 columnas con `grid-template-columns: repeat(2, 1fr)`.
         1280 px (Escritorio): Las imágenes se desbordaban y el contenido se dispersaba. Solución:Se limitó el ancho con `max-width: 68rem` en `<main>` e `img { max-width: 100%; }`.
+Dia 2 
+    MicroReto 1
+    ## Registro de Migración a Bootstrap 5.3 — Catálogo de la Flota
+
+    ### 1. Métricas de Desarrollo
+    * **Tiempo invertido:** 15 minutos (Análisis de grilla, corrección de CDN/atributos HTML y reestructuración semántica sin `<div>`).
+    * **Líneas de CSS propio (Versión Anterior vs. Bootstrap):**
+    * **Antes (CSS propio):** ~35 líneas de código en `styles.css` (declaraciones de `display: grid`, `grid-template-columns`, `gap`, alineaciones y 2 reglas de `@media` para *responsive*).
+    * **Ahora (Bootstrap 5.3):** **0 líneas** de CSS personalizado escritas para la distribución del catálogo. Todo se resuelve mediante utilidades de la librería.
+    * **Clases de Bootstrap implementadas:** `container`, `row`, `g-4`, `col-12`, `col-sm-6`, `col-lg-4`, `col-xl-3`, `img-fluid`, `mb-4`, `mb-2`, `my-5`.
+
+    ---
+
+    ### 2. Balance Técnico: Pros y Contras
+
+    #### ¿Qué nos dio Bootstrap sin esfuerzo?
+    1. **Sistema Responsivo Inmediato:** Transición fluida entre celular (1 columna), pantallas pequeñas/tablets (2 columnas), pantallas grandes (3 columnas) y monitores extra grandes (4 columnas) utilizando un solo conjunto de clases.
+    2. **Espaciado Unificado (Gutters):** Con la clase `g-4`, la librería calcula automáticamente los márgenes internos y externos (tanto verticales como horizontales) entre las tarjetas, eliminando el desbordamiento o la necesidad de reglas manuales como `gap` o `margin-bottom`.
+    3. **Imágenes Adaptables:** La clase `img-fluid` escala automáticamente las imágenes al 100% del ancho del contenedor manteniendo la proporción sin requerir estilos adicionales.
+    4. **Reseteo de Estilos Normativo (Reboot):** Asegura consistencia visual en cualquier navegador.
+
+    #### ¿Qué control se pierde o se compromete?
+    1. **Especificidad y Personalización del CSS:** Modificar comportamientos muy puntuales de la grilla exige sobreescribir variables CSS de Bootstrap o usar reglas más específicas (`!important` o selectores pesados) en lugar de controlar las reglas desde cero.
+    2. **Carga y Peso de la Hoja de Estilos:** Se incluye todo el framework de Bootstrap (decenas de componentes y utilidades) para resolver únicamente la maquetación en grilla de un catálogo.
+    3. **Dependencia de la Estructura Jerárquica del Framework:** Se requiere mantener estrictamente la relación Padre-Hijo (`container` -> `row` -> `col`) para evitar errores de desbordamiento horizontal o desalineación de márgenes negativos.
