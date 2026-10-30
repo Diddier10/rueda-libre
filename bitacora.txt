@@ -191,3 +191,14 @@ Dia 2
     1. **Especificidad y Personalización del CSS:** Modificar comportamientos muy puntuales de la grilla exige sobreescribir variables CSS de Bootstrap o usar reglas más específicas (`!important` o selectores pesados) en lugar de controlar las reglas desde cero.
     2. **Carga y Peso de la Hoja de Estilos:** Se incluye todo el framework de Bootstrap (decenas de componentes y utilidades) para resolver únicamente la maquetación en grilla de un catálogo.
     3. **Dependencia de la Estructura Jerárquica del Framework:** Se requiere mantener estrictamente la relación Padre-Hijo (`container` -> `row` -> `col`) para evitar errores de desbordamiento horizontal o desalineación de márgenes negativos.
+    
+    MicroReto 3
+        ### Bitácora: Registro de Clases Utilitarias de Bootstrap 5.3
+
+        Durante la construcción de la sección de beneficios y la franja de llamado a la acción (CTA), exploramos la documentación oficial de Bootstrap e integramos las siguientes 5 clases utilitarias clave:
+
+        1. `d-inline-block`: Cambia el tipo de visualización a bloque en línea. Permite que elementos de texto en línea (como enlaces `<a>`) acepten dimensiones de alto/ancho y rellenos (*padding*) verticales como si fueran botones.
+        2. `opacity-75`: Ajusta la opacidad de la tipografía al 75%, permitiendo crear una jerarquía visual suave y secundaria en párrafos o explicaciones sin cambiar el color base del texto.
+        3. `flex-shrink-0`: Evita que un elemento en un contenedor Flexbox (como la imagen decorativa o el enlace de acción) se encoja o deforme cuando el espacio en pantalla se reduce.
+        4. `text-nowrap`: Impide que el texto dentro de un elemento se rompa en múltiples líneas o renglones, manteniendo expresiones como "Reservar ahora" en una sola línea continua.
+        5. `rounded-circle`: Transforma la forma de contenedores o imágenes aplicándoles un `border-radius: 50%`, haciendo que las imágenes cuadradas o de igual proporción se muestren perfectamente circulares.
