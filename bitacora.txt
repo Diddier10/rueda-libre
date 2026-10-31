@@ -202,3 +202,21 @@ Dia 2
         3. `flex-shrink-0`: Evita que un elemento en un contenedor Flexbox (como la imagen decorativa o el enlace de acción) se encoja o deforme cuando el espacio en pantalla se reduce.
         4. `text-nowrap`: Impide que el texto dentro de un elemento se rompa en múltiples líneas o renglones, manteniendo expresiones como "Reservar ahora" en una sola línea continua.
         5. `rounded-circle`: Transforma la forma de contenedores o imágenes aplicándoles un `border-radius: 50%`, haciendo que las imágenes cuadradas o de igual proporción se muestren perfectamente circulares.
+
+    MicroReto 4 
+    # Bitácora de Aprendizaje: Resolución de Conflictos DevTools
+
+        ## 1. Color y decoración de enlaces en navegación (`<nav>`)
+        * **Conflicto en DevTools:** Los estilos globales de la cabecera en `styles.css` (`header a`) sobreescribían los colores de enlaces de Bootstrap, mostrando propiedades tachadas (*overridden*) en el inspector.
+        * **Causa:** Alta especificidad en la regla CSS tradicional en cascada.
+        * **Solución aplicada:** Se eliminó el selector contextual `header a` en `styles.css` y se adoptaron las utilidades nativas de Bootstrap en el marcado HTML (`class="text-decoration-none text-success"`).
+
+        ## 2. Desplazamiento vertical por `padding-bottom` en `<body>`
+        * **Conflicto en DevTools:** Se detectó la aparición de una barra de desplazamiento vertical (*scrollbar*) no deseada en pantallas grandes.
+        * **Causa:** Colisión entre la regla propia `body { padding-bottom: 4rem; }` y la utilidad Flexbox de Bootstrap `min-vh-100` usada para ajustar la altura de la página.
+        * **Solución aplicada:** Se retiró la regla fija de `padding-bottom` del archivo CSS y se fijó el pie de página usando la clase utilitaria `mt-auto` en la etiqueta `<footer>`.
+
+        ## 3. Márgenes y pesos tipográficos en encabezados (`<h1>` - `<h3>`)
+        * **Conflicto en DevTools:** Los tamaños de fuente y márgenes definidos en `styles.css` colisionaban con las clases tipográficas de Bootstrap (`.display-4`, `.h5`, `.fw-bold`).
+        * **Causa:** Declaraciones redundantes en `styles.css` que competían con las utilidades de texto del framework.
+        * **Solución aplicada:** Se eliminaron los selectores manuales obsoletos de la portada en `styles.css` para dejar que las utilidades nativas de Bootstrap gestionen la tipografía de forma limpia.
