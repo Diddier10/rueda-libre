@@ -28,8 +28,8 @@ body {
   line-height: 1.6;
   margin: 0;
   padding: 0;
-  padding-bottom: 4rem; 
 }
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -39,105 +39,6 @@ body {
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   border: 0;
-}
-
-.btn-whatsapp {
-  position: fixed;
-  bottom: 1.5rem;
-  right: 1.5rem;
-  background-color: #25D366; 
-  color: var(--blanco);
-  font-weight: bold;
-  text-decoration: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 50px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 1000;
-  transition: transform 0.2s ease, background-color 0.2s ease;
-}
-
-.btn-whatsapp:hover {
-  background-color: #1EBE5D;
-  transform: scale(1.05);
-}
-
-header, footer, .footer {
-  background-color: var(--azul-noche);
-  color: var(--blanco);
-  padding: var(--espacio-m);
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header.encabezado {
-  display: flex;
-  flex-direction: column;     
-  align-items: center;        
-  gap: var(--espacio-s);
-  padding: var(--espacio-m);
-  background-color: var(--azul-noche);
-  text-align: center;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: var(--blanco);
-  margin: 0;
-}
-
-header a, footer a {
-  color: var(--blanco);
-}
-
-#menu, header nav ul#menu {
-  list-style: none;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: var(--espacio-s);
-  padding: 0;
-  margin: 0;
-}
-
-#menu a, header nav ul#menu a {
-  display: block;
-  color: var(--blanco);
-  text-decoration: none;
-  padding: var(--espacio-xs) var(--espacio-s);
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-
-#menu a:hover,
-#menu a:focus,
-header nav ul#menu a:hover,
-header nav ul#menu a:focus {
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-  outline: none;
-}
-
-#menu a.activo {
-  background-color: var(--verde-ruta);
-  color: var(--blanco);
-  font-weight: bold;
-  border-bottom: 3px solid var(--naranja-pedal);
-}
-
-.footer, footer {
-  display: flex;
-  justify-content: space-between; 
-  align-items: flex-start;     
-  gap: var(--espacio-l);
-}
-
-footer section {
-  flex: 1;
 }
 
 table {
@@ -167,11 +68,16 @@ tr:nth-child(even) {
   background-color: #F4F0E8;
 }
 
+@media (min-width: 768px) {
+  table {
+    font-size: 1rem;
+  }
+
+  th, td {
+    padding: var(--espacio-s) var(--espacio-m);
+  }
+}
 .tarjeta-servicio, .tarjeta-ruta {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-  padding: var(--espacio-m);                 
   background-color: var(--blanco);
   border-radius: 8px;              
   border: 1px solid #e0e0e0;       
@@ -180,7 +86,6 @@ tr:nth-child(even) {
 .tarjeta-servicio {
   position: relative;
   border-color: var(--gris-asfalto);
-  margin-bottom: var(--espacio-m);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -203,11 +108,6 @@ tr:nth-child(even) {
   height: 12rem;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: var(--espacio-s);
-}
-
-.imagen-ruta {
-  margin: 0 0 var(--espacio-s) 0;
 }
 
 .precio, .detalles-ruta {
@@ -217,33 +117,16 @@ tr:nth-child(even) {
   margin: 0.5rem 0 1rem 0;
 }
 
-#reservas {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--espacio-l);
-  padding: 2.5rem var(--espacio-m);
-  align-items: start;
-}
-
-#reservas section {
-  background-color: var(--blanco);
-  padding: var(--espacio-m);
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
 fieldset {
   border: 1px solid var(--gris-asfalto);
   border-radius: 6px;
   padding: var(--espacio-m);
-  margin-bottom: var(--espacio-l);
   background-color: var(--blanco);
 }
 
 #reservas form fieldset {
   border: 1px solid #cccccc;
   padding: var(--espacio-s);
-  margin-bottom: 1.25rem;
 }
 
 legend {
@@ -252,19 +135,9 @@ legend {
   color: var(--verde-ruta);
 }
 
-form p {
-  margin-bottom: var(--espacio-s);
-}
-
 label,
 #reservas form label {
-  display: block;
-  margin-bottom: var(--espacio-xs);
   font-weight: 600;
-}
-
-#reservas form label {
-  margin-top: 0.75rem;
 }
 
 input[type="text"],
@@ -274,9 +147,6 @@ input[type="date"],
 input[type="number"],
 select,
 textarea {
-  display: block;
-  width: 100%;
-  padding: var(--espacio-s);
   border: 1px solid var(--gris-asfalto);
   border-radius: 4px;
   background-color: var(--crema);
@@ -294,51 +164,14 @@ textarea {
   padding: 0.6rem;
 }
 
-input[type="checkbox"] {
-  display: inline-block;
-  width: auto;
-  margin-right: var(--espacio-xs);
-}
-
-#reservas form fieldset.fila-campos {
-  display: flex;
-  flex-direction: row;
-  gap: var(--espacio-s);
-  border: none;
-  padding: 0;
-  margin-top: 0.75rem;
-  margin-bottom: 0;
-}
-
-#reservas form fieldset.fila-campos .campo {
-  flex: 1;
-  margin: 0;
-}
-
-#reservas form fieldset.fila-campos .campo label {
-  margin-top: 0;
-}
-
 .horario-atencion {
   background-color: var(--gris-claro);
-  padding: var(--espacio-m);
   border-radius: 8px;
   border: 1px solid #e0e0e0;
 }
 
-.horario-atencion dl {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: var(--espacio-xs) var(--espacio-s);
-  margin: 0;
-}
-
 .horario-atencion dt {
   font-weight: bold;
-}
-
-.horario-atencion dd {
-  margin: 0;
 }
 
 button[type="submit"],
@@ -367,7 +200,6 @@ button[type="submit"]:hover,
   display: block;
   background-color: var(--naranja-pedal);
   padding: 0.75rem 1.25rem;
-  margin-top: auto;
 }
 
 .boton-reserva:hover {
@@ -379,6 +211,26 @@ button[type="submit"]:hover,
   transform: translateY(0);
 }
 
+.btn-whatsapp {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #25D366; 
+  color: var(--blanco);
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 50px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1EBE5D;
+  transform: scale(1.05);
+}
+
 input:focus,
 select:focus,
 textarea:focus,
@@ -388,40 +240,4 @@ button:focus,
 .boton-reserva:focus {
   outline: 3px solid var(--naranja-pedal);
   outline-offset: 3px;
-}
-
-@media (min-width: 768px) {
-  table {
-    font-size: 1rem;
-  }
-
-  th, td {
-    padding: var(--espacio-s) var(--espacio-m);
-  }
-
-  header, header.encabezado {
-    flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-  }
-
-  header nav ul#menu {
-    justify-content: flex-end;
-    gap: var(--espacio-s);
-  }
-
-  #reservas {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  footer, .footer {
-    flex-direction: row;
-    justify-content: space-between;
-  }
-}
-
-@media (min-width: 1200px) {
-  #reservas {
-    gap: var(--espacio-xl);
-  }
 }

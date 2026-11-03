@@ -167,7 +167,7 @@ Dia 1
         68 px (Tablet): Las tarjetas de flota/rutas se veían muy estiradas en 1 columna. Solución:Se cambió la cuadrícula a 2 columnas con `grid-template-columns: repeat(2, 1fr)`.
         1280 px (Escritorio): Las imágenes se desbordaban y el contenido se dispersaba. Solución:Se limitó el ancho con `max-width: 68rem` en `<main>` e `img { max-width: 100%; }`.
 Dia 2 
-    MicroReto 1
+    MicroReto 5
     ## Registro de Migración a Bootstrap 5.3 — Catálogo de la Flota
 
     ### 1. Métricas de Desarrollo
@@ -192,7 +192,7 @@ Dia 2
     2. **Carga y Peso de la Hoja de Estilos:** Se incluye todo el framework de Bootstrap (decenas de componentes y utilidades) para resolver únicamente la maquetación en grilla de un catálogo.
     3. **Dependencia de la Estructura Jerárquica del Framework:** Se requiere mantener estrictamente la relación Padre-Hijo (`container` -> `row` -> `col`) para evitar errores de desbordamiento horizontal o desalineación de márgenes negativos.
     
-    MicroReto 3
+    MicroReto 6
         ### Bitácora: Registro de Clases Utilitarias de Bootstrap 5.3
 
         Durante la construcción de la sección de beneficios y la franja de llamado a la acción (CTA), exploramos la documentación oficial de Bootstrap e integramos las siguientes 5 clases utilitarias clave:
@@ -203,7 +203,7 @@ Dia 2
         4. `text-nowrap`: Impide que el texto dentro de un elemento se rompa en múltiples líneas o renglones, manteniendo expresiones como "Reservar ahora" en una sola línea continua.
         5. `rounded-circle`: Transforma la forma de contenedores o imágenes aplicándoles un `border-radius: 50%`, haciendo que las imágenes cuadradas o de igual proporción se muestren perfectamente circulares.
 
-    MicroReto 4 
+    MicroReto 7
     # Bitácora de Aprendizaje: Resolución de Conflictos DevTools
 
         ## 1. Color y decoración de enlaces en navegación (`<nav>`)
@@ -220,3 +220,23 @@ Dia 2
         * **Conflicto en DevTools:** Los tamaños de fuente y márgenes definidos en `styles.css` colisionaban con las clases tipográficas de Bootstrap (`.display-4`, `.h5`, `.fw-bold`).
         * **Causa:** Declaraciones redundantes en `styles.css` que competían con las utilidades de texto del framework.
         * **Solución aplicada:** Se eliminaron los selectores manuales obsoletos de la portada en `styles.css` para dejar que las utilidades nativas de Bootstrap gestionen la tipografía de forma limpia.
+
+    MicroReto 8
+        ### Comparativa: CSS Propietario (v1.5) vs. Bootstrap 5.3 (Versión Actual)
+
+    | Métrica | Versión 1.5 (CSS Manual)[cite: 4] | Versión Actual (Bootstrap + CSS Limpio) |
+    | :--- | :--- | :--- |
+    | **Líneas de código (`styles.css`)** | 546 líneas[cite: 4] | 243 líneas (~40% de reducción) |
+    | **Tiempo estimado invertido** | ~8 - 10 horas | ~2 - 3 horas |
+
+    * **Versión 1.5 (Manual)**
+    * **Ventajas:** Control absoluto sobre cada selector y ausencia de dependencias externas.
+    * **Desventajas:** Código extenso, esfuerzo elevado redactando `@media queries` manuales[cite: 4] y alto costo de mantenimiento estructural.
+
+    * **Versión Actual (Bootstrap 5.3)**
+    * **Ventajas:** Reducción drástica de código en `styles.css`, grillas responsivas inmediatas en HTML y eliminación de inconsistencias de maquetación entre páginas.
+    * **Desventajas:** Mayor densidad de clases utilitarias en las etiquetas HTML y dependencia de CDN externo.
+
+    #### Conclusión
+    La migración a Bootstrap 5.3 permitió delegar toda la distribución de diseño al framework, reservando `styles.css` exclusivamente para la identidad de marca (variables corporativas, tablas tradicionales y estados de interacción). Esta refactorización 
+    redujo la hoja de estilos en más de un 40% y simplificó los tiempos de desarrollo de forma sustancial.
