@@ -77,18 +77,6 @@ tr:nth-child(even) {
     padding: var(--espacio-s) var(--espacio-m);
   }
 }
-.tarjeta-servicio, .tarjeta-ruta {
-  background-color: var(--blanco);
-  border-radius: 8px;              
-  border: 1px solid #e0e0e0;       
-}
-
-.tarjeta-servicio {
-  position: relative;
-  border-color: var(--gris-asfalto);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
 .badge-nuevo {
   position: absolute;
   top: 1rem;
