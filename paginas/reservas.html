@@ -38,30 +38,37 @@
         <section class="row g-4 align-items-start">
             <section class="col-12 col-md-8 bg-white p-4 p-md-5 rounded-4 border shadow-sm">
                 <h1 class="display-5 fw-bold text-primary mb-4">Reserva tu bicicleta</h1>
-                <form action="https://httpbin.org/post" method="POST" class="d-flex flex-column gap-4">
+                <article class="alert alert-warning alert-dismissible fade show d-flex align-items-center gap-3 rounded-4 shadow-sm mb-4" role="alert">
+                    <i class="bi bi-exclamation-triangle-fill fs-3 text-warning-emphasis flex-shrink-0"></i>
+                    <section class="flex-grow-1">
+                        <strong class="text-dark d-block">¡Recuerda traer tu documento!</strong>
+                        <span class="small text-secondary">Es obligatorio presentar tu documento de identidad original al momento de recoger la bicicleta en la sede.</span>
+                    </section>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Cerrar aviso"></button>
+                </article>
+                <form action="https://httpbin.org/post" method="POST" class="d-flex flex-column gap-4 needs-validation" novalidate>
                     <fieldset class="border rounded-3 p-3 p-md-4 m-0">
                         <legend class="float-none w-auto px-2 fs-5 fw-bold text-primary">Tus datos</legend>
-                        <p class="mb-3">
-                            <label for="nombre" class="form-label fw-semibold text-secondary">Nombre:</label>
-                            <input type="text" id="nombre" name="nombre" class="form-control" required minlength="3" maxlength="30">
-                        </p>
-                        <p class="mb-3">
-                            <label for="correo" class="form-label fw-semibold text-secondary">Correo electrónico:</label>
-                            <input type="email" id="correo" name="correo" class="form-control" required>
-                        </p>
-                        <fieldset class="border-0 p-0 m-0">
-                            <legend class="sr-only">Documento y Celular</legend>
-                            <section class="row g-3">
-                                <p class="campo col-12 col-sm-6 m-0">
-                                    <label for="documento" class="form-label fw-semibold text-secondary">Número de documento:</label>
-                                    <input type="text" id="documento" name="documento" class="form-control" required pattern="[0-9]{6,10}" title="Ingrese un número de documento válido (6 a 10 dígitos)">
-                                </p>
-                                <p class="campo col-12 col-sm-6 m-0">
-                                    <label for="telefono" class="form-label fw-semibold text-secondary">Teléfono:</label>
-                                    <input type="tel" id="telefono" name="telefono" class="form-control" required pattern="3[0-9]{6,9}" title="Ingrese un número de teléfono válido (7 a 10 dígitos)">
-                                </p>
-                            </section>
-                        </fieldset>
+                            <p class="mb-3">
+                                <label for="nombre" class="form-label fw-semibold text-secondary">Nombre:</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" required minlength="3" maxlength="30">
+                                <small class="invalid-feedback">Ingresa tu nombre y apellido completos (debe tener entre 3 y 30 caracteres).</small>
+                            </p>
+                            <p class="mb-3">
+                                <label for="correo" class="form-label fw-semibold text-secondary">Correo electrónico:</label>
+                                <input type="email" id="correo" name="correo" class="form-control" required>
+                                <small class="invalid-feedback">Ingresa una dirección de correo válida con el formato nombre@dominio.com.</small>
+                            </p>
+                            <p class="campo col-12 col-sm-6 m-0">
+                                <label for="documento" class="form-label fw-semibold text-secondary">Número de documento:</label>
+                                <input type="text" id="documento" name="documento" class="form-control" required pattern="[0-9]{6,10}" title="Ingrese un número de documento válido (6 a 10 dígitos)">
+                                <small class="invalid-feedback">Ingresa solo números para tu documento (entre 6 y 10 dígitos, sin puntos ni espacios).</small>
+                            </p>
+                            <p class="campo col-12 col-sm-6 m-0">
+                                <label for="telefono" class="form-label fw-semibold text-secondary">Teléfono:</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control" required pattern="3[0-9]{6,9}" title="Ingrese un número de teléfono válido (7 a 10 dígitos)">
+                                <small class="invalid-feedback">Ingresa un número celular de 10 dígitos que comience por 3 (ejemplo: 3001234567).</small>
+                            </p>
                     </fieldset>
                     <fieldset class="border rounded-3 p-3 p-md-4 m-0">
                         <legend class="float-none w-auto px-2 fs-5 fw-bold text-primary">Tu alquiler</legend>
@@ -73,6 +80,7 @@
                                 <option value="montaña">Montaña</option>
                                 <option value="rural">Rural</option>
                             </select>
+                            <small class="invalid-feedback">Selecciona el modelo de bicicleta que deseas alquilar de la lista desplegable.</small>
                         </p>
                         <p class="mb-3">
                             <label for="plan" class="form-label fw-semibold text-secondary">Plan de alquiler:</label>
@@ -82,28 +90,37 @@
                                 <option value="por-dia">Por día</option>
                                 <option value="fin-de-semana">Fin de semana</option>
                             </select>
+                            <small class="invalid-feedback">Selecciona el plan de alquiler que deseas de la lista desplegable.</small>
                         </p>
                         <section class="row g-3 mb-3">
                             <p class="col-12 col-sm-6 m-0">
                                 <label for="hora" class="form-label fw-semibold text-secondary">Fecha de reserva:</label>
                                 <input type="date" id="hora" name="hora" class="form-control" required min="2026-11-01" max="2026-12-31">
+                                <small class="invalid-feedback">Selecciona una fecha de reserva válida entre el 1 de noviembre y el 31 de diciembre de 2026.</small>
                             </p>
                             <p class="col-12 col-sm-6 m-0">
                                 <label for="cantidad" class="form-label fw-semibold text-secondary">Cantidad de bicicletas:</label>
                                 <input type="number" id="cantidad" name="cantidad" class="form-control" required min="1" max="6" value="1">
+                                <small class="invalid-feedback">Indica un número de bicicletas entre 1 y 6 para realizar la reserva.</small>
                             </p>
                         </section>
                         <p class="mb-0">
                             <label for="comentarios" class="form-label fw-semibold text-secondary">Comentarios adicionales:</label>
                             <textarea id="comentarios" name="comentarios" class="form-control" rows="4" cols="40" maxlength="200" placeholder="Maximo 300 caracteres..."></textarea>
+                            <small class="invalid-feedback">Ingresa comentarios adicionales sobre tu reserva (máximo 200 caracteres).</small>
                         </p>
                     </fieldset>
                     <fieldset class="border rounded-3 p-3 p-md-4 m-0">
-                        <legend class="float-none w-auto px-2 fs-5 fw-bold text-primary">Confirmacion</legend>
-                        <p class="form-check m-0">
-                            <input type="checkbox" id="politicas" name="acepta_politicas" class="form-check-input" value="si" required>
-                            <label for="politicas" class="form-check-label fw-semibold text-secondary">Acepto las políticas de alquiler</label>
-                        </p>
+                        <legend class="float-none w-auto px-2 fs-5 fw-bold text-primary">Confirmación</legend>
+                            <p class="form-check m-0">
+                                <input type="checkbox" id="politicas" name="acepta_politicas" class="form-check-input" value="si" required>
+                                <label for="politicas" class="form-check-label fw-semibold text-secondary">
+                                    <button type="button" class="btn btn-link p-0 border-0 fw-bold text-primary text-decoration-underline align-baseline" data-bs-toggle="modal" data-bs-target="#modalPoliticas">
+                                       Acepto las  políticas de alquiler.
+                                    </button>
+                                </label>
+                                <small class="invalid-feedback">Debes marcar la casilla para confirmar que leíste y aceptas las políticas de alquiler.</small>
+                            </p>
                     </fieldset>
                     <button type="submit" class="btn btn-primary btn-lg fw-bold py-3 shadow-sm w-100">
                         Confirmar Reserva
@@ -135,7 +152,6 @@
                     <dt class="col-6 fw-bold">Domingo</dt>
                     <dd class="col-6 text-end mb-0">Cerrado</dd>
                 </dl>
-                <!-- TARJETA 2: Información de Contacto -->
                 <article class="card border-0 shadow-sm rounded-4 p-4 bg-white">
                     <header class="border-bottom pb-2 mb-3">
                         <h2 class="h4 fw-bold text-primary m-0">
@@ -177,6 +193,81 @@
     <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
         WhatsApp
     </a>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
+    <section class="modal fade" id="modalPoliticas" tabindex="-1" aria-labelledby="tituloModalPoliticas" aria-hidden="true">
+        <article class="modal-dialog modal-dialog-centered modal-lg">
+            <section class="modal-content rounded-4 border-0 shadow">
+                
+                <header class="modal-header bg-light border-bottom rounded-top-4 p-4">
+                    <h2 class="modal-title h4 fw-bold text-primary m-0" id="tituloModalPoliticas">
+                        <i class="bi bi-file-earmark-text-fill me-2"></i>Políticas de Alquiler
+                    </h2>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar ventana"></button>
+                </header>
+
+                <section class="modal-body p-4 text-secondary">
+                    <p class="mb-3 text-dark fw-medium">Para garantizar un servicio seguro y transparente, ten en cuenta las siguientes condiciones:</p>
+                    <ol class="d-flex flex-column gap-3 mb-0 ps-3">
+                        <li class="fw-semibold text-dark">
+                            <span class="text-secondary fw-normal">Presenta tu documento de identidad original al recoger la bicicleta.</span>
+                        </li>
+                        <li class="fw-semibold text-dark">
+                            <span class="text-secondary fw-normal">Revisa la bicicleta con el asesor antes de salir de la sede.</span>
+                        </li>
+                        <li class="fw-semibold text-dark">
+                            <span class="text-secondary fw-normal">Cada 15 minutos de retraso en la devolución tienen un recargo de $5.000.</span>
+                        </li>
+                        <li class="fw-semibold text-dark">
+                            <span class="text-secondary fw-normal">Los daños por mal uso se cobran según el costo de la reparación.</span>
+                        </li>
+                        <li class="fw-semibold text-dark">
+                            <span class="text-secondary fw-normal">Los menores de edad deben estar acompañados por un adulto responsable.</span>
+                        </li>
+                    </ol>
+                </section>
+
+                <footer class="modal-footer bg-light border-top rounded-bottom-4 p-3">
+                    <button type="button" class="btn btn-primary fw-bold px-4 rounded-3" data-bs-dismiss="modal">
+                        <i class="bi bi-check-lg me-1"></i>Entendido y Aceptar
+                    </button>
+                </footer>
+
+            </section>
+        </article>
+    </section>
+    <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+        <i class="bi bi-whatsapp me-1"></i> WhatsApp
+    </a>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+            <script>
+            (() => {
+                'use strict';
+                const forms = document.querySelectorAll('.needs-validation');
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+                })();
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script>
+            (() => {
+                'use strict';
+                const forms = document.querySelectorAll('.needs-validation');
+                Array.from(forms).forEach(form => {
+                    form.addEventListener('submit', event => {
+                        if (!form.checkValidity()) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            })();
+        </script>
+    </body>
 </html>
