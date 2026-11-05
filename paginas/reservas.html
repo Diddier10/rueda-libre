@@ -59,16 +59,21 @@
                                 <input type="email" id="correo" name="correo" class="form-control" required>
                                 <small class="invalid-feedback">Ingresa una dirección de correo válida con el formato nombre@dominio.com.</small>
                             </p>
-                            <p class="campo col-12 col-sm-6 m-0">
-                                <label for="documento" class="form-label fw-semibold text-secondary">Número de documento:</label>
-                                <input type="text" id="documento" name="documento" class="form-control" required pattern="[0-9]{6,10}" title="Ingrese un número de documento válido (6 a 10 dígitos)">
-                                <small class="invalid-feedback">Ingresa solo números para tu documento (entre 6 y 10 dígitos, sin puntos ni espacios).</small>
-                            </p>
-                            <p class="campo col-12 col-sm-6 m-0">
-                                <label for="telefono" class="form-label fw-semibold text-secondary">Teléfono:</label>
-                                <input type="tel" id="telefono" name="telefono" class="form-control" required pattern="3[0-9]{6,9}" title="Ingrese un número de teléfono válido (7 a 10 dígitos)">
-                                <small class="invalid-feedback">Ingresa un número celular de 10 dígitos que comience por 3 (ejemplo: 3001234567).</small>
-                            </p>
+                            <fieldset class="border-0 p-0 m-0">
+                                <legend class="sr-only">Documento y Celular</legend>
+                                <section class="row g-3">
+                                    <p class="campo col-12 col-sm-6 m-0">
+                                        <label for="documento" class="form-label fw-semibold text-secondary">Número de documento:</label>
+                                        <input type="text" id="documento" name="documento" class="form-control" required pattern="[0-9]{6,10}" title="Ingrese un número de documento válido (6 a 10 dígitos)">
+                                        <small class="invalid-feedback">Ingresa solo números para tu documento (entre 6 y 10 dígitos, sin puntos ni espacios).</small>
+                                    </p>
+                                    <p class="campo col-12 col-sm-6 m-0">
+                                        <label for="telefono" class="form-label fw-semibold text-secondary">Teléfono:</label>
+                                        <input type="tel" id="telefono" name="telefono" class="form-control" required pattern="3[0-9]{6,9}" title="Ingrese un número de teléfono válido (7 a 10 dígitos)">
+                                        <small class="invalid-feedback">Ingresa un número celular de 10 dígitos que comience por 3 (ejemplo: 3001234567).</small>
+                                    </p>
+                                </section>
+                            </fieldset>
                     </fieldset>
                     <fieldset class="border rounded-3 p-3 p-md-4 m-0">
                         <legend class="float-none w-auto px-2 fs-5 fw-bold text-primary">Tu alquiler</legend>
@@ -181,13 +186,13 @@
             </aside>
         </section>
     </main>
-    <footer class="pie-pagina border-top py-4 bg-light mt-auto">
+    <footer class="pie-pagina-corporativo border-top py-4 mt-auto">
         <nav class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
-            <p class="negocio fw-bold mb-0 text-dark">Rueda Libre</p>
+            <p class="negocio fw-bold mb-0 text-white">Rueda Libre</p>
             <address class="correo mb-0 fst-normal">
-                <a href="mailto:hola@ruedalibre.example" class="text-secondary text-decoration-none">hola@ruedalibre.example</a>
+                <a href="mailto:hola@ruedalibre.example" class="text-light text-decoration-none">hola@ruedalibre.example</a>
             </address>
-            <small class="ano text-secondary">&copy; 2026</small>
+            <small class="ano text-white-50">&copy; 2026 Rueda Libre. Todos los derechos reservados.</small>
         </nav>
     </footer>
     <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
@@ -234,9 +239,6 @@
             </section>
         </article>
     </section>
-    <a href="https://wa.me/573000000000" class="btn-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
-        <i class="bi bi-whatsapp me-1"></i> WhatsApp
-    </a>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
             <script>
             (() => {
@@ -254,20 +256,5 @@
                 })();
             </script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <script>
-            (() => {
-                'use strict';
-                const forms = document.querySelectorAll('.needs-validation');
-                Array.from(forms).forEach(form => {
-                    form.addEventListener('submit', event => {
-                        if (!form.checkValidity()) {
-                            event.preventDefault();
-                            event.stopPropagation();
-                        }
-                        form.classList.add('was-validated');
-                    }, false);
-                });
-            })();
-        </script>
     </body>
 </html>

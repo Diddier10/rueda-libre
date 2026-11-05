@@ -5,29 +5,54 @@
 }
 
 :root {
-  --verde-ruta: #1E7A4F;
-  --naranja-pedal: #F39A2B;
-  --naranja: var(--naranja-pedal); 
-  --azul-noche: #14213D;
-  --crema: #FAF6EF;
-  --gris-asfalto: #5B6470;
-  --gris-claro: #F4F4F4;
-  --blanco: #FFFFFF;
+    --bs-primary: #0d6efd;
+    --bs-primary-rgb: 13, 110, 253;
+    --bs-link-color: #0d6efd;
+    --bs-link-hover-color: #0b5ed7;
+    --bs-body-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --bs-border-radius: 0.5rem;
+    --bs-border-radius-sm: 0.25rem;
+    --bs-border-radius-lg: 0.75rem;
 
-  --espacio-xs: 0.5rem;
-  --espacio-s: 1rem;
-  --espacio-m: 1.5rem;
-  --espacio-l: 2rem;
-  --espacio-xl: 3rem;
+    --verde-ruta: #16a34a;
+    --naranja-pedal: #ff7d00;
+    --azul-noche: #0f172a;
+    --gris-asfalto: #cbd5e1;
+    --gris-claro: #f8fafc;
+    --crema: #f8fafc;
+    --blanco: #ffffff;
+
+    --espacio-xs: 0.25rem;
+    --espacio-s: 0.5rem;
+    --espacio-m: 1rem;
+    --espacio-l: 1.5rem;
 }
 
-body {
-  background-color: var(--crema);
-  color: var(--azul-noche);
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  line-height: 1.6;
-  margin: 0;
-  padding: 0;
+.btn-primary {
+    --bs-btn-color: #ffffff;
+    --bs-btn-bg: #16a34a;
+    --bs-btn-border-color: #16a34a;
+    --bs-btn-hover-color: #ffffff;
+    --bs-btn-hover-bg: #15803d;
+    --bs-btn-hover-border-color: #15803d;
+    --bs-btn-focus-shadow-rgb: 22, 163, 74;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #166534;
+    --bs-btn-active-border-color: #15803d;
+    --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+
+.btn-naranja-pedal {
+    --bs-btn-color: #212529;
+    --bs-btn-bg: #ff7d00;
+    --bs-btn-border-color: #ff7d00;
+    --bs-btn-hover-color: #212529;
+    --bs-btn-hover-bg: #e06c00;
+    --bs-btn-hover-border-color: #e06c00;
+    --bs-btn-focus-shadow-rgb: 255, 125, 0;
+    --bs-btn-active-color: #ffffff;
+    --bs-btn-active-bg: #b85800;
+    --bs-btn-active-border-color: #b85800;
 }
 
 .sr-only {
@@ -40,171 +65,34 @@ body {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: var(--espacio-l);
-  background-color: var(--blanco);
-  border-radius: 6px;
-  overflow: hidden;
-  font-size: 0.875rem; 
+.form-control,
+.form-select {
+  border: 1px solid #ced4da;
 }
 
-th, td {
-  padding: 0.5rem 0.4rem; 
-  border: 1px solid var(--gris-asfalto);
-  text-align: left;
-  word-break: break-word; 
-}
-
-th {
-  background-color: var(--azul-noche);
-  color: var(--blanco);
-  font-weight: bold;
-}
-
-tr:nth-child(even) {
-  background-color: #F4F0E8;
-}
-
-@media (min-width: 768px) {
-  table {
-    font-size: 1rem;
-  }
-
-  th, td {
-    padding: var(--espacio-s) var(--espacio-m);
-  }
-}
-.badge-nuevo {
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  background-color: var(--naranja-pedal);
-  color: var(--azul-noche);
-  font-weight: bold;
-  font-size: 0.85rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 4px;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-.tarjeta-servicio img, .imagen-ruta img {
-  width: 100%;
-  height: 12rem;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.precio, .detalles-ruta {
-  font-weight: bold;
-  font-size: 1.25rem;
-  color: var(--azul-noche);
-  margin: 0.5rem 0 1rem 0;
+.form-control:focus,
+.form-select:focus {
+  border-color: #86b7fe;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 fieldset {
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 6px;
+  border: 1px solid var(--gris-asfalto) !important;
+  border-radius: 0.5rem;
   padding: var(--espacio-m);
   background-color: var(--blanco);
 }
 
-#reservas form fieldset {
-  border: 1px solid #cccccc;
-  padding: var(--espacio-s);
-}
-
 legend {
-  font-weight: bold;
-  padding: 0 var(--espacio-xs);
-  color: var(--verde-ruta);
+  font-weight: 700;
+  color: var(--bs-primary);
 }
-
-label,
-#reservas form label {
-  font-weight: 600;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-input[type="number"],
-select,
-textarea {
-  border: 1px solid var(--gris-asfalto);
-  border-radius: 4px;
-  background-color: var(--crema);
-  font-size: 1rem;
-}
-
-#reservas form input[type="text"],
-#reservas form input[type="email"],
-#reservas form input[type="tel"],
-#reservas form input[type="date"],
-#reservas form input[type="number"],
-#reservas form select,
-#reservas form textarea {
-  border-color: #cccccc;
-  padding: 0.6rem;
-}
-
-.horario-atencion {
-  background-color: var(--gris-claro);
-  border-radius: 8px;
-  border: 1px solid #e0e0e0;
-}
-
-.horario-atencion dt {
-  font-weight: bold;
-}
-
-button[type="submit"],
-.btn-cta,
-.boton-reserva {
-  display: inline-block;
-  background-color: var(--verde-ruta);
-  color: var(--blanco);
-  border: none;
-  padding: var(--espacio-s) var(--espacio-l);
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.2s ease, transform 0.1s ease;
-}
-
-button[type="submit"]:hover,
-.btn-cta:hover {
-  background-color: var(--azul-noche);
-}
-
-.boton-reserva {
-  display: block;
-  background-color: var(--naranja-pedal);
-  padding: 0.75rem 1.25rem;
-}
-
-.boton-reserva:hover {
-  background-color: #d96b00;
-  transform: translateY(-2px);
-}
-
-.boton-reserva:active {
-  transform: translateY(0);
-}
-
 .btn-whatsapp {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
   background-color: #25D366; 
-  color: var(--blanco);
+  color: #ffffff;
   font-weight: bold;
   text-decoration: none;
   padding: 0.8rem 1.2rem;
@@ -216,16 +104,43 @@ button[type="submit"]:hover,
 
 .btn-whatsapp:hover {
   background-color: #1EBE5D;
+  color: #ffffff;
   transform: scale(1.05);
 }
+.portada-destacada {
+  background: linear-gradient(135deg, rgba(248, 250, 252, 0.95) 0%, rgba(226, 232, 240, 0.6) 100%);
+  border-bottom: 3px solid var(--verde-ruta);
+  position: relative;
+}
 
-input:focus,
-select:focus,
-textarea:focus,
-button:focus,
-.btn-cta:focus,
-.btn-whatsapp:focus,
-.boton-reserva:focus {
-  outline: 3px solid var(--naranja-pedal);
-  outline-offset: 3px;
+.titulo-seccion {
+  position: relative;
+  padding-bottom: 0.75rem;
+  letter-spacing: -0.02em;
+}
+
+.titulo-seccion::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 4px;
+  background-color: var(--naranja-pedal);
+  border-radius: 2px;
+}
+
+.pie-pagina-corporativo {
+  background-color: var(--azul-noche);
+  color: #f8fafc;
+  border-top: 4px solid var(--verde-ruta);
+}
+
+.pie-pagina-corporativo a {
+  transition: color 0.2s ease-in-out;
+}
+
+.pie-pagina-corporativo a:hover {
+  color: var(--naranja-pedal) !important;
 }
