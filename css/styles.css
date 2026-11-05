@@ -77,7 +77,7 @@
 }
 
 fieldset {
-  border: 1px solid var(--gris-asfalto) !important;
+  border: 1px solid var(--gris-asfalto);
   border-radius: 0.5rem;
   padding: var(--espacio-m);
   background-color: var(--blanco);
@@ -142,5 +142,10 @@ legend {
 }
 
 .pie-pagina-corporativo a:hover {
-  color: var(--naranja-pedal) !important;
+  color: var(--naranja-pedal);
+}
+.img-ilustrativa {
+  width: 30%;
+  height: 80%;
+  object-fit: cover;
 }
