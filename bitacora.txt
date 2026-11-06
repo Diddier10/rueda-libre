@@ -241,5 +241,15 @@ Dia 2
     La migración a Bootstrap 5.3 permitió delegar toda la distribución de diseño al framework, reservando `styles.css` exclusivamente para la identidad de marca (variables corporativas, tablas tradicionales y estados de interacción). Esta refactorización 
     redujo la hoja de estilos en más de un 40% y simplificó los tiempos de desarrollo de forma sustancial.
 
-    MicroReto 9
-    
+Semana 3
+    MicroReto 1
+        1. Implementación en Semana 2 (Bootstrap)
+        En la semana 2 construí el botón utilizando clases abstraídas y compuestas por el framework.
+        Enfoque: Se delega el layout, espaciado interno, estados de hover y tipografía a la clase base .btn y sus modificadores (.btn-light, .btn-lg).
+        Hoy construí el botón combinando utilidades atómicas de bajo nivel directamente en el HTML:
+        Enfoque: Se controla cada propiedad visual de forma explícita (display, padding, color, bordes, estados de interacción y accesibilidad).
+        Diferencia Clave
+        Framework de Componentes (Bootstrap): Proporciona elementos prediseñados de alto nivel. 
+        Permite maquetar rápido, pero limita la flexibilidad e impone una línea estética que suele requerir sobreescribir CSS para personalizaciones.
+        Framework Utility-First (Tailwind CSS): Proporciona bloques de construcción primarios a nivel de CSS. 
+        Otorga control total sobre el diseño directamente desde el marcado HTML, sin salir del archivo ni escribir reglas CSS personalizadas.
