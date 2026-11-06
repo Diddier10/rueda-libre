@@ -253,3 +253,6 @@ Semana 3
         Permite maquetar rápido, pero limita la flexibilidad e impone una línea estética que suele requerir sobreescribir CSS para personalizaciones.
         Framework Utility-First (Tailwind CSS): Proporciona bloques de construcción primarios a nivel de CSS. 
         Otorga control total sobre el diseño directamente desde el marcado HTML, sin salir del archivo ni escribir reglas CSS personalizadas.
+
+        2. Hallazgo: La clase bg-black utilizada en prototipo.html está presente con su correspondiente regla CSS generada en output.css. Ocurre porque Tailwind CSS utiliza un motor de compilación Just-In-Time (JIT). Durante el proceso de build, 
+        la CLI lee los archivos definidos en la propiedad content de tailwind.config.js y analiza qué clases atómicas se están usando realmente.
