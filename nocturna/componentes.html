@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Componentes - Rueda Libre Nocturna</title>
+    <link rel="stylesheet" href="src/output.css"> 
+</head>
+<body class="bg-black text-white min-h-screen p-6 sm:p-12 antialiased font-sans">
+
+  <main class="max-w-4xl mx-auto space-y-16">
+
+        <header class="border-b border-neutral-800 pb-6">
+        <h1 class="text-3xl font-black tracking-tight text-white mb-2">
+            Biblioteca de Componentes
+        </h1>
+        <p class="text-neutral-400 text-sm">
+            Catálogo visual de los botones y la tarjeta de ruta construidos para Rueda Libre Nocturna sin divs.
+        </p>
+        </header>
+
+        <section class="space-y-6">
+            <h2 class="text-xl font-bold text-neutral-200 border-l-4 border-white pl-3">
+                1. Botones (Primario, Secundario, Fantasma)
+            </h2>
+            
+            <nav aria-label="Variantes de botones" class="p-6 rounded-2xl bg-neutral-900 border border-neutral-800 flex flex-wrap items-center gap-4">
+                
+                <button type="button" 
+                        class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-black bg-white rounded-xl hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 transition-all duration-200 shadow-md">
+                Primario
+                </button>
+                <button type="button" 
+                        class="inline-flex items-center justify-center px-6 py-3 text-sm font-bold text-white bg-neutral-900/40 border border-neutral-700 rounded-xl hover:bg-neutral-800 hover:border-neutral-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 transition-all duration-200">
+                Secundario
+                </button>
+                <button type="button" 
+                        class="inline-flex items-center justify-center px-6 py-3 text-sm font-semibold text-neutral-300 hover:text-white hover:bg-neutral-800/60 rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 transition-all duration-200">
+                Fantasma
+                </button>
+
+            </nav>
+            </section>
+
+            <section class="space-y-6">
+            <h2 class="text-xl font-bold text-neutral-200 border-l-4 border-white pl-3">
+                2. Tarjeta de Ruta (MiniReto 3)
+            </h2>
+            
+            <article class="flex flex-col max-w-md overflow-hidden rounded-2xl bg-neutral-900 border border-neutral-800 shadow-lg text-left transition-all duration-300 hover:border-neutral-600 hover:shadow-2xl hover:shadow-white/10">
+            
+                <figure class="relative w-full h-52 overflow-hidden bg-neutral-800">
+                    <img 
+                        src="../img/ruta1.jpeg" 
+                        alt="Ciclistas en la ruta Alumbrados y Miradores por Medellín" 
+                        class="w-full h-full object-cover"
+                    />
+                    
+                    <span class="absolute top-3 right-3 inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/20 border border-amber-500/60 text-amber-300 text-xs font-bold backdrop-blur-md shadow-md">
+                        <span class="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
+                        <span>Nivel Intermedio</span>
+                    </span>
+                </figure>
+                <section class="flex flex-col flex-1 p-6 space-y-6">
+                    
+                    <header>
+                        <h3 class="text-xl font-bold text-white tracking-tight">
+                        Ruta Alumbrados & Miradores
+                        </h3>
+                    </header>
+
+                    <ul class="space-y-3 border-y border-neutral-800 py-4">
+                        <li class="flex items-center justify-between">
+                        <span class="text-xs font-medium text-neutral-400 uppercase tracking-wider">Distancia</span>
+                        <strong class="text-sm sm:text-base font-bold text-white">18 km</strong>
+                        </li>
+                        <li class="flex items-center justify-between">
+                        <span class="text-xs font-medium text-neutral-400 uppercase tracking-wider">Duración</span>
+                        <strong class="text-sm sm:text-base font-bold text-white">2.5 horas</strong>
+                        </li>
+                        <li class="flex items-center justify-between">
+                        <span class="text-xs font-medium text-neutral-400 uppercase tracking-wider">Punto de encuentro</span>
+                        <strong class="text-sm sm:text-base font-bold text-white">Parque Poblado</strong>
+                        </li>
+                    </ul>
+
+                    <footer class="flex items-center justify-between gap-4 mt-auto pt-2">
+                        <p class="flex flex-col">
+                            <span class="text-xs text-neutral-400 uppercase tracking-wider font-semibold">Precio</span>
+                            <strong class="text-2xl font-black text-white">$55.000</strong>
+                        </p>
+
+                        <a href="#inscribete" 
+                            class="inline-flex items-center justify-center px-5 py-2.5 text-sm font-bold text-black bg-white rounded-xl hover:bg-neutral-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black active:scale-95 transition-all duration-200 shadow-md">
+                            Inscríbete
+                        </a>
+                    </footer>
+                </section>
+            </article>
+        </section>
+
+    </main>
+</body>
+</html>
