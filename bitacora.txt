@@ -278,3 +278,40 @@ Semana 3 Dia 2  Layout de la Landing Nocturna
         - Botón Primario (clases: px-6 py-3 text-sm font-bold text-black bg-white rounded-xl ...)
         - Tarjeta de Ruta completa (structure: article > figure + section > header + ul + footer)
         No se crearon variantes nuevas.
+     
+     Responsive Mobile-First
+
+    Auditoría a 360 px (problemas detectados):
+        1. Header: los enlaces de navegación y el botón "Inscríbete" estaban
+           dentro del mismo <ul>, por lo que en móvil desaparecía toda acción.
+        2. Hero h1: text-5xl (3rem) demasiado grande para 360 px, texto apretado.
+        3. Stats "Desde $55.000": text-2xl podía desbordar el contenedor en 360 px.
+        4. Títulos de sección: text-3xl base excesivo para pantallas pequeñas.
+        5. Padding de secciones: py-24 y py-20 dejaban demasiado espacio vacío en móvil.
+        6. CTA card: p-10 base aún muy amplio para 360 px.
+
+    Cambios aplicados (mobile-first):
+        - Header: px-4 md:px-6, py-3 md:py-4. Nav links hidden md:flex.
+          Botón "Inscríbete" separado fuera del <ul> con md:hidden para que
+          sea visible solo en móvil.
+        - Títulos h1/h2: base text-2xl o text-3xl → sm:text-3xl/sm:text-5xl → lg:text-5xl/lg:text-7xl.
+        - Padding secciones: base py-12 → md:py-20 o md:py-24.
+        - Padding horizontal: base px-4 → md:px-6 en todas las secciones.
+        - Stats: base text-xl → sm:text-2xl → lg:text-3xl.
+        - CTA card: base p-6 → sm:p-10 → lg:p-16.
+        - Footer nav: py-6 md:py-8.
+
+    Rutas (grid responsive):  1 col base → md:grid-cols-2 → lg:grid-cols-3
+    Pasos (grid responsive):  1 col base → sm:grid-cols-2 → lg:grid-cols-4
+
+    Tabla de pruebas responsive:
+
+    Ancho     Header              Hero              Rutas         Pasos         CTA            Footer
+    -----     ------              ----              -----         -----         ---            ------
+    360 px    Logo + botón,       text-3xl,         1 columna     1 columna     p-6,           Apilado,
+              nav oculto          py-12                                         text-2xl       py-6
+
+    768 px    Logo + nav +        text-5xl,         2 columnas    2 columnas    p-10,          En fila,
+              botón en fila       py-24                                         text-3xl       py-8
+
+    1024 px   Logo
