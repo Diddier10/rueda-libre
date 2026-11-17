@@ -1,1 +1,39 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Open+Sans:wght@400;600;700&display=swap');
+
+@theme {
+    --color-verde-ruta: #16a34a;
+    --color-naranja-pedal: #ff7d00;
+    --color-azul-noche: #0f172a;
+    --color-gris-asfalto: #cbd5e1;
+    --color-crema: #f8fafc;
+    --color-amarillo-farol: #FFD166;
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Open Sans', sans-serif;
+}
+
+@layer components {
+    .btn-primario {
+        @apply inline-flex items-center justify-center
+               px-5 py-2.5 text-sm font-bold
+               text-azul-noche bg-amarillo-farol rounded-xl shadow-md
+               hover:bg-amarillo-farol/80
+               focus:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol
+               focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche
+               active:scale-95 transition-all duration-200;
+    }
+
+    .btn-primario-lg {
+        @apply inline-flex items-center justify-center
+               px-10 py-4 text-base font-bold
+               text-azul-noche bg-amarillo-farol rounded-xl shadow-xl
+               hover:bg-amarillo-farol/80
+               focus:outline-none focus-visible:ring-2 focus-visible:ring-amarillo-farol
+               focus-visible:ring-offset-2 focus-visible:ring-offset-azul-noche
+               active:scale-95 transition-all duration-200;
+    }
+    .nav-link {
+        @apply text-sm font-semibold text-gris-asfalto
+               hover:text-crema transition-colors duration-200;
+    }
+}

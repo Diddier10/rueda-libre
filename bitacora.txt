@@ -315,3 +315,120 @@ Semana 3 Dia 2  Layout de la Landing Nocturna
               botón en fila       py-24                                         text-3xl       py-8
 
     1024 px   Logo
+
+    Personalización de Tema y Dark Mode
+ 
+    Definición del @theme con tokens de marca:
+        Se definió un bloque @theme en Tailwind CSS v4 con 6 colores de marca
+        y 2 familias tipográficas:
+        - --color-verde-ruta: #16a34a
+        - --color-naranja-pedal: #ff7d00
+        - --color-azul-noche: #0f172a
+        - --color-gris-asfalto: #cbd5e1
+        - --color-crema: #f8fafc
+        - --color-amarillo-farol: #FFD166
+        - --font-heading: 'Montserrat' (títulos h1-h3, logo)
+        - --font-body: 'Open Sans' (texto general)
+ 
+    Sustituciones realizadas (index + componentes):
+        - text-white → text-crema
+        - text-neutral-400 → text-gris-asfalto
+        - bg-neutral-900 → bg-azul-noche/80
+        - border-neutral-800 → border-gris-asfalto/20
+        - bg-white text-black (botones) → bg-amarillo-farol text-azul-noche
+        - border-white (sección headers) → border-amarillo-farol
+        - Hover de cards: hover:border-amarillo-farol/40 hover:shadow-amarillo-farol/10
+        - Círculos de pasos: bg-amarillo-farol text-azul-noche
+        - Tipografía: font-heading en h1, h2, h3; font-body en body
+ 
+    Dark mode (variante dark:):
+        - body: dark:bg-azul-noche dark:text-crema
+        - Estrategia: prefers-color-scheme (media query del sistema operativo)
+        - El diseño ya es oscuro por defecto (bg-azul-noche), por lo tanto
+          dark: refuerza los mismos valores para consistencia.
+ 
+    Validación de contraste WCAG (mínimo 4.5:1 texto normal):
+    Combinación                                  | Ratio  | Resultado
+    Crema (#f8fafc) sobre Azul Noche (#0f172a)   | 17.3:1 | PASA
+    Amarillo Farol (#FFD166) sobre Azul Noche     | 9.6:1  | PASA
+    Gris Asfalto (#cbd5e1) sobre Azul Noche       | 10.1:1 | PASA
+    Azul Noche sobre Amarillo Farol (botones)     | 9.6:1  | PASA
+    Verde Ruta (#16a34a) sobre Azul Noche          | 3.8:1  | NO PASA (no se usa como texto sobre fondo oscuro)
+
+     Refactorización con @apply y Comparativa de Frameworks
+ 
+    1. Clases repetidas identificadas en la landing:
+ 
+    Patrón                          | Veces repetido | Clases Tailwind por aparición
+    Botón primario (estándar)       | 5 veces        | 15 clases (inline-flex, items-center, justify-center, px-5, py-2.5, text-sm, font-bold, text-azul-noche, bg-amarillo-farol, rounded-xl, shadow-md, hover:..., focus-visible:..., active:scale-95, transition-all)
+    Botón primario (grande)         | 2 veces        | 15 clases (mismas con px-10, py-4, text-base, shadow-xl)
+    Enlace de navegación            | 3 veces        | 5 clases (text-sm, font-semibold, text-gris-asfalto, hover:text-crema, transition-colors)
+ 
+    2. Clases @apply creadas (3 en total, en @layer components):
+ 
+    .btn-primario       → Botón estándar (cards, nav). Absorbe 15 clases utilitarias.
+    .btn-primario-lg    → Botón grande (hero, CTA). Variante con padding y sombra mayores.
+    .nav-link           → Enlace de navegación. Absorbe 5 clases utilitarias.
+ 
+    Resultado: Los botones pasaron de ~15 clases inline a 1 clase (.btn-primario),
+    y los nav links de 5 clases a 1 (.nav-link). Las cards se mantienen con
+    utilidades directas porque son componentes del kit que se reutilizan completos.
+ 
+    3. Migración de CDN browser a compilación CLI:
+ 
+    Se eliminó el <script> del CDN browser y el bloque <style type="text/tailwindcss">
+    inline del HTML. Ahora el @theme y los @apply viven en src/input.css y se
+    compilan con: npx @tailwindcss/cli -i src/input.css -o src/output.css --minify
+    El HTML solo carga <link rel="stylesheet" href="src/output.css">.
+ 
+    4. Medición de tamaño (CSS minificado con --minify):
+ 
+    Recurso                                      | Tamaño minificado
+    Tailwind output.css (landing nocturna)        | 31.9 KB
+    Tailwind output.css sin minificar             | 39.7 KB
+    Ahorro por minificación                       | ~20%
+ 
+    5. Comparativa Bootstrap 5.3 vs Tailwind CSS v4:
+ 
+    Recursos cargados por el sitio v2.0 (Bootstrap):
+    Recurso                                      | Tamaño minificado
+    bootstrap.min.css (CDN)                       | ~230 KB
+    bootstrap.bundle.min.js (CDN, incluye Popper) | ~80 KB
+    bootstrap-icons.min.css (CDN)                 | ~90 KB
+    css/styles.css (custom)                       | 3.3 KB
+    TOTAL Bootstrap                               | ~403 KB
+ 
+    Recursos cargados por la landing nocturna (Tailwind):
+    Recurso                                      | Tamaño minificado
+    output.css (compilado con --minify)           | 31.9 KB
+    JavaScript adicional                          | 0 KB
+    TOTAL Tailwind                                | 31.9 KB
+ 
+    Reducción: Tailwind entrega un 92% menos de peso que Bootstrap para esta landing.
+ 
+    Comparativa por criterios:
+ 
+    Criterio              | Bootstrap 5.3                                      | Tailwind CSS v4
+    ----------------------|----------------------------------------------------|-------------------------------------------------
+    Curva de aprendizaje  | Más baja. Las clases como .btn, .row, .col son     | Más alta al inicio. Hay que memorizar las
+                          | intuitivas y la documentación tiene ejemplos        | utilidades atómicas (px-4, flex, rounded-xl).
+                          | copiables. En nuestra experiencia, el primer        | Nuestro primer componente (botón) tardó más
+                          | prototipo estuvo listo en minutos.                  | en construirse, pero a partir del tercero la
+                          |                                                     | velocidad se igualó.
+    ----------------------|----------------------------------------------------|-------------------------------------------------
+    Personalización       | Limitada. Cambiar colores de marca requiere         | Total. El bloque @theme define tokens de
+                          | sobreescribir variables Sass o CSS. En Semana 2     | marca que se usan directamente como clases
+                          | tuvimos conflictos de especificidad al intentar     | (bg-azul-noche, text-crema). No hubo ningún
+                          | cambiar colores de botones y enlaces (registrado    | conflicto de especificidad. Crear variantes
+                          | en bitácora MicroReto 7).                           | oscuras fue agregar dark: al prefijo.
+    ----------------------|----------------------------------------------------|-------------------------------------------------
+    Tamaño final          | ~403 KB (CSS + JS + iconos). Se carga el framework | 31.9 KB (solo CSS). Solo se compilan las
+                          | completo aunque el sitio use una fracción de los    | clases que realmente aparecen en el HTML.
+                          | componentes. Bootstrap exige JS para dropdowns,     | No requiere JavaScript del framework.
+                          | modales y tooltips aunque no se usen todos.         | Reducción del 92% respecto a Bootstrap.
+    ----------------------|----------------------------------------------------|-------------------------------------------------
+    Casos de uso ideales  | Prototipos rápidos, dashboards administrativos,     | Landing pages, sitios de marca con identidad
+                          | sitios donde la identidad visual estándar de        | visual propia, proyectos donde el peso y la
+                          | Bootstrap es aceptable y se necesitan componentes   | personalización importan. Ideal cuando se
+                          | interactivos (modales, carruseles, tooltips)        | necesita control total del diseño sin cargar
+                          | listos para usar.                                   | componentes JavaScript innecesarios.
